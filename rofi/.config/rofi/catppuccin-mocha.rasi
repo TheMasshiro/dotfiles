@@ -1,0 +1,164 @@
+* {
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #1e1e2e;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+
+    width: 500;
+}
+
+@import "font.rasi"
+@import "colors.rasi"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height:                         300px;
+    border:                         1px;
+    border-color:                   @BGA;
+    background-color:               @BG;
+    text-color:                     @FG;
+}
+
+
+inputbar {
+    children:                       [prompt,entry];
+    background-color:               @BG;
+    text-color:                     @FG;
+    expand:                         false;
+    border:                  	    0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                   @BDR;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+prompt {
+    background-color: 		        @BG;
+    text-color: 		            @FG;
+}
+
+textbox-prompt-colon {
+    expand: 			            false;
+    str: 			                "";
+    border-radius:                  100%;
+    background-color:               @BG;
+    text-color:                     @BG;
+    padding:                        8px 12px 8px 12px;
+}
+
+entry {
+    background-color:               @BG;
+    text-color:                     @FG;
+    placeholder-color:              @FG;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search...";
+    blink:                          true;
+    border:                  	    0px 0px 2px 0px;
+    border-color:                   @BDR;
+    border-radius:                  10px;
+    padding:                        8px;
+}
+
+case-indicator {
+    background-color:               @BG;
+    text-color:                     @FG;
+    spacing:                        0;
+}
+
+listview {
+    background-color:               @BG;
+    columns:                        1;
+    lines:			                5;
+    padding:                        20px;
+    spacing:                        10px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @BG;
+}
+
+element {
+    background-color:               @BG;
+    text-color:                     @FG;
+    orientation:                    horizontal;
+    border-radius:                  5px;
+    padding:                        5px;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:               @BGA;
+    text-color:                     @SEL;
+    border:                  	    0px 0px 0px 0px;
+    border-radius:                  10px;
+    border-color:                   @BDR;
+}
+
+element.active,
+element.selected.urgent {
+  background-color: @ON;
+  text-color: @BG;
+  border-color: @ON;
+}
+
+element.selected.urgent {
+  border-color: @BDR;
+}
+
+element.urgent,
+element.selected.active {
+  background-color: @OFF;
+  text-color: @BG;
+  border-color: @OFF;
+}
+
+element.selected.active {
+  border-color: @BDR;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @BG;
+    text-color: @FG;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @BG;
+  text-color: @FG;
+}
+
+message {
+    background-color: @BG;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @BG;
+}

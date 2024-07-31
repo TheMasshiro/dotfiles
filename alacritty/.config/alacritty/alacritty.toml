@@ -1,0 +1,32 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[shell]
+program = "tmux"
+args = [ "new-session", "-A", "-D", "-s", "main" ]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+
+[font]
+size = 11
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"

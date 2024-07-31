@@ -1,0 +1,12 @@
+configuration{
+    modi:                           "drun";
+    icon-theme:                     "Papirus";
+    show-icons:                     true;
+    display-drun:                   "";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+    click-to-exit: 		            true;
+    location:                       0;
+}
+
+@theme "catppuccin-mocha"

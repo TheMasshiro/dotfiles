@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(print -l main work projects personal learnings dotfiles | fzf --header 'Select a Session:' --cycle  --bind 'ctrl-j:toggle-down,ctrl-k:toggle-up' --tmux center,40% --layout reverse --border)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=${${selected:t}//\./_}
+
+if [[ $selected_name == "main" ]]; then
+    selected=~
+fi
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+tmux switch-client -t $selected_name

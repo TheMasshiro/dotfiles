@@ -1,0 +1,67 @@
+@import "mocha.css";
+
+* {
+  font-family: MesloLGS NF;
+  font-size: 14px;
+  min-height: 0;
+}
+
+#waybar {
+  background: @base;
+  color: @text;
+  margin: 2px 2px;
+}
+
+#workspaces {
+  margin: 0 5px 0 0;
+  background-color: @base;
+}
+
+#workspaces button {
+  color: @lavender;
+  padding: 0.2rem;
+}
+
+#workspaces button.focused {
+  color: @sky;
+  background-color: @surface0;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+}
+
+#custom-music,
+#tray,
+#clock,
+#pulseaudio,
+#idle_inhibitor,
+#custom-power {
+  background-color: @base;
+  padding: 0.1rem 0.2rem;
+  margin: 0 5px;
+}
+
+#clock {
+  color: @blue;
+}
+
+#idle_inhibitor,
+#pulseaudio {
+  color: @maroon;
+}
+
+#custom-music {
+  color: @mauve;
+}
+
+#custom-power {
+  color: @red;
+  margin-right: 10px;
+}
+
+#custom-separator {
+  color: @surface2;
+  font-size: 18px;
+  padding: 0 2px;
+}
