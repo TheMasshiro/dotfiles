@@ -30,10 +30,8 @@ Before using the Neovim configuration:
 
 ---
 
-[!TIP]
-
+> [!TIP]
 > Always backup your existing configuration before applying changes.
 
-[!NOTE]
-
+> [!NOTE]
 > I accidentally deleted the .git during configuration. The auto suggestion got me. :(
