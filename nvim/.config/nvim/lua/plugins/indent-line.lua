@@ -30,6 +30,8 @@ return {
 				pattern = {
 					"help",
 					"dashboard",
+					"alpha",
+					"neo-tree",
 					"Trouble",
 					"trouble",
 					"lazy",
