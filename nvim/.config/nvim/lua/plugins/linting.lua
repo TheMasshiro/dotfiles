@@ -9,23 +9,30 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
+			c = { "cpplint" },
+			cpp = { "cpplint" },
 			python = { "ruff" },
 			go = { "golangci-lint" },
-			cpp = { "cpplint" },
-			c = { "cpplint" },
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			htmldjango = { "djlint" },
 		}
 
 		local eslint = lint.linters.eslint_d
-
 		eslint.args = {
 			"--no-warn-ignored",
 			"--format",
 			"json",
 			"--stdin",
 			"--stdin-filename",
+			function()
+				return vim.api.nvim_buf_get_name(0)
+			end,
+		}
+
+		local cpplint = lint.linters.cpplint
+		cpplint.args = {
+			"--filter=-legal/copyright",
 			function()
 				return vim.api.nvim_buf_get_name(0)
 			end,
