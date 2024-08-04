@@ -8,7 +8,7 @@ export FZF_DEFAULT_OPTS=" \
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(print -l main work projects personal learnings dotfiles | fzf --header 'Select a Session:' --cycle  --bind 'ctrl-j:toggle-down,ctrl-k:toggle-up' --tmux center,40% --layout reverse --border)
+    selected=$(echo -e "main\nwork\nprojects\npersonal\nlearnings\ndotfiles" | fzf --header 'Select a Session:' --cycle  --bind 'ctrl-j:toggle-down,ctrl-k:toggle-up' --tmux center,40% --layout reverse --border)
 fi
 
 if [[ -z $selected ]]; then
