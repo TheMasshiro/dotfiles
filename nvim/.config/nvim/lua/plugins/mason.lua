@@ -38,23 +38,37 @@ return {
 				"marksman",
 				"lua_ls",
 				"emmet_language_server",
+
+				-- Go
+				"gopls",
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				-- Linter / Formatter
+				-- Python
 				"ruff",
 				"djlint",
 
-				-- Linter
-				"cpplint",
+				-- Javascript/HTML/CSS
 				"eslint_d",
-
-				-- Formatter
-				"clang-format",
 				"prettier",
+
+				-- C/C++
+				"cpplint",
+				"clang-format",
+
+				-- Lua
 				"stylua",
+
+				-- Go
+				"gofumpt",
+				"goimports",
+				"gomodifytags",
+				"golangci-lint",
+				"gotests",
+				"iferr",
+				"impl",
 			},
 		})
 	end,
