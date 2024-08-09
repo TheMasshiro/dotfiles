@@ -6,7 +6,7 @@ return {
 			formatters_by_ft = {
 				-- Conform will run multiple formatters sequentially
 				lua = { "stylua" },
-				python = { "ruff" },
+				python = { "isort", "ruff_format" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				javascript = { "prettier" },
@@ -17,13 +17,14 @@ return {
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				htmldjango = { "djlint" },
+				go = { "goimports", "gofmt" },
 				-- Use a sub-list to run only the first available formatter
 			},
 			format_on_save = {
 				timeout_ms = 3000,
 				async = false,
 				quiet = false,
-				lsp_fallback = true,
+				lsp_format = "fallback",
 			},
 			notify_on_error = false,
 		},
