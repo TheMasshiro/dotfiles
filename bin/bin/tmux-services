@@ -22,21 +22,21 @@ perform_action() {
     else
         echo "$(echo ${action}ing | sed 's/./\U&/') $service..."
     fi
-    if sudo systemctl $action $service; then
+    
+    if [ "$action" = "status" ]; then
+        sudo systemctl status $service
+        # Don't need to check the return code for status
+    elif sudo systemctl $action $service; then
         if [ "$action" = "stop" ]; then
-            echo "$service stopped successfully."
-        elif [ "$action" = "status" ]; then
-            :
+            echo "$service has stopped."
         else
-            echo "$service ${action}ed successfully."
+            echo "$service has ${action}ed."
         fi
     else
-        if [ "$action" = "status" ]; then
-            echo "Failed to get status of $service. Please check the system logs for more information."
-        else
-            echo "Failed to $action $service. Please check the system logs for more information."
-        fi
+        echo "Failed to $action $service. Please check the system logs for more information."
     fi
+    
+    echo
     echo "Press any key to continue..."
     read -k1 -s
 }
