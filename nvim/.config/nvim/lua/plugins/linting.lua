@@ -12,7 +12,7 @@ return {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
 			python = { "ruff" },
-			go = { "golangci-lint" },
+			go = { "golangcilint" },
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			htmldjango = { "djlint" },
