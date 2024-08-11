@@ -5,6 +5,7 @@
 ## Terminal Setup
 
 - **Shell:** ZSH
+- **Terminal:** Kitty
 - **Theme:** Catppuccin
 - **Prompt:** powerlevel10k
 
@@ -17,7 +18,7 @@ stow <directory>/
 ```
 
 > [!WARNING]
-> Do not use stow sway/. The sway configuration requires manual setup.
+> Do not use "stow sway/". The sway configuration requires manual setup.
 
 ## Configuration Notes
 
