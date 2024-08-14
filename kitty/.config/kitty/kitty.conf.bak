@@ -2,3 +2,17 @@
 # Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
+
+# BEGIN_KITTY_FONT
+font_family MesloLGS NF
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size 11.0
+# END_KITTY_FONT
+
+# # LAUNCH_TMUX_ON_STARTUP
+# shell zsh --login -c "tmux attach || tmux"
+
+# DISABLE_LIGATURES
+disable_ligatures never
