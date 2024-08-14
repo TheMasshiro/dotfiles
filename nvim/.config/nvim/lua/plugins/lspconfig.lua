@@ -34,28 +34,25 @@ return {
 
 					-- set keybinds
 					opts.desc = "Show References (LSP)"
-					keymap.set("n", "<leader>lgR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+					keymap.set("n", "<leader>lgR", ":Telescope lsp_references<CR>", opts) -- show definition, references
 
 					opts.desc = "Go to Declaration (LSP)"
 					keymap.set("n", "<leader>lgD", vim.lsp.buf.declaration, opts) -- go to declaration
 
 					opts.desc = "Show Definitions (LSP)"
-					keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+					keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
 					opts.desc = "Show Implementations (LSP)"
-					keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+					keymap.set("n", "<leader>li", ":Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
 					opts.desc = "Show Type Definitions (LSP)"
-					keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-
-					opts.desc = "Rename Through Project (LSP)"
-					keymap.set("n", "<leader>rr", vim.lsp.buf.rename, opts) -- smart rename
+					keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
 					opts.desc = "Format Buffer"
 					keymap.set("n", "<leader>bf", vim.lsp.buf.format, opts)
 
 					opts.desc = "Show Diagnostics (LSP)"
-					keymap.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+					keymap.set("n", "<leader>lD", ":Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
 					opts.desc = "Show Line Diagnostics (LSP)"
 					keymap.set("n", "<leader>ll", vim.diagnostic.open_float, opts) -- show diagnostics for line

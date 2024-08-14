@@ -17,7 +17,7 @@ return {
 				{ "<leader>n", group = "database" },
 				{ "<leader>r", group = "refactor" },
 				{ "<leader>s", group = "substitute" },
-				{ "<leader>t", group = "tabs" },
+				{ "<leader>t", group = "tests" },
 				{ "<leader>w", group = "session" },
 				{ "<leader>x", group = "diagnostics/quickfix" },
 				{ "<leader>fn", group = "file tree" },

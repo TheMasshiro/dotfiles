@@ -72,7 +72,7 @@ return {
 	{
 		"Wansmer/treesj",
 		event = { "BufReadPre", "BufNewFile" },
-		keys = { { "<space>bm", "<cmd>TSJToggle<CR>", desc = "Toggle Join (TSJ)" } },
+		keys = { { "<space>bm", ":TSJToggle<CR>", desc = "Toggle Join (TSJ)" } },
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
 		opts = { use_default_keymaps = false },
 	},

@@ -9,7 +9,7 @@ return {
 
 		vim.o.sessionoptions = "localoptions"
 
-		vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session (Session)" })
-		vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session (Session)" })
+		vim.keymap.set("n", "<leader>wr", ":SessionRestore<CR>", { desc = "Restore session (Session)" })
+		vim.keymap.set("n", "<leader>ws", ":SessionSave<CR>", { desc = "Save session (Session)" })
 	end,
 }

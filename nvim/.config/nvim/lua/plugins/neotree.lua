@@ -8,13 +8,13 @@ return {
 	},
 	cmd = "Neotree",
 	keys = {
-		{ "<leader>fne", "<cmd>Neotree toggle<CR>", desc = "Toggle file tree (Neotree)" },
+		{ "<leader>fne", ":Neotree toggle<CR>", desc = "Toggle file tree (Neotree)" },
 		{
 			"<leader>fnn",
-			"<cmd>Neotree toggle reveal<CR>",
+			":Neotree toggle reveal<CR>",
 			desc = "Toggle file tree on current file (Neotree)",
 		},
-		{ "<leader>fng", "<cmd>Neotree toggle git_status<CR>", desc = "Toggle git status tree (Neotree)" },
+		{ "<leader>fng", ":Neotree toggle git_status<CR>", desc = "Toggle git status tree (Neotree)" },
 	},
 	opts = {
 		filesystem = {
