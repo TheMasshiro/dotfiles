@@ -22,8 +22,8 @@ return {
 			typescript = { "eslint_d" },
 		}
 
-		local cpplint = lint.linters.cpplint
-		cpplint.args = {
+		local cpp = lint.linters.cpplint
+		cpp.args = {
 			"--filter=-legal/copyright",
 			function()
 				return vim.api.nvim_buf_get_name(0)
