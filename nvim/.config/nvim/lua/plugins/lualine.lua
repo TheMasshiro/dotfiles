@@ -7,7 +7,7 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
-				component_separators = { right = "" },
+				component_separators = {},
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = { "neo-tree", "dbui" },
