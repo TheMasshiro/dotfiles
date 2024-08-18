@@ -1,5 +1,28 @@
 return {
 	-- Depending on filetypes
+	-- Adapter
+	-- Add more adapters here to lazy load
+	{
+		"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = function()
+			require("dap-go").setup()
+		end,
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		ft = "python",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = function()
+			local python_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+			require("dap-python").setup(python_path)
+		end,
+	},
 	{
 		"mfussenegger/nvim-dap",
 		ft = { "go", "python" },
@@ -11,29 +34,12 @@ return {
 			-- Installs the debug adapters for you
 			"williamboman/mason.nvim",
 			"jay-babu/mason-nvim-dap.nvim",
-
-			-- Adapter
-			{
-				"leoluz/nvim-dap-go",
-				ft = "go",
-			},
-			{
-				"mfussenegger/nvim-dap-python",
-				ft = "python",
-			},
 		},
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
 
 			dapui.setup()
-
-			-- Python
-			local python_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-			require("dap-python").setup(python_path)
-
-			-- Go
-			require("dap-go").setup()
 
 			require("mason-nvim-dap").setup({
 				-- Makes a best effort to setup the various debuggers with
