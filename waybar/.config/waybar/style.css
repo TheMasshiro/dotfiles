@@ -32,6 +32,7 @@
 }
 
 #custom-music,
+#custom-gammastep,
 #tray,
 #clock,
 #pulseaudio,
@@ -51,7 +52,8 @@
   color: @maroon;
 }
 
-#custom-music {
+#custom-music,
+#custom-gammastep {
   color: @mauve;
 }
 

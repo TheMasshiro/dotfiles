@@ -15,6 +15,8 @@
         "custom/separator",
         "idle_inhibitor",
         "custom/separator",
+        "custom/gammastep",
+        "custom/separator",
         "pulseaudio",
         "custom/separator",
         "clock",
@@ -50,8 +52,15 @@
             "deactivated": ""
         },
         "tooltip": true,
-        "tooltip-format-activated": "idle off",
-        "tooltip-format-deactivated": "idle on"
+        "tooltip-format-activated": "Idle off",
+        "tooltip-format-deactivated": "Idle on"
+    },
+    "custom/gammastep": {
+        "format": "{}",
+        "interval": 5,
+        "on-update": "",
+        "exec": "sleep 0.05; ~/bin/gammastep.sh",
+        "on-click": "~/bin/gammastep.sh toggle"
     },
     "custom/separator": {
         "format": "|",
