@@ -35,4 +35,4 @@ Before using the Neovim configuration:
 > Always backup your existing configuration before applying changes.
 
 > [!NOTE]
-> I accidentally deleted the .git during configuration. The auto suggestion got me. :(
+> I'm using T430 that's why I lazy load plugins in neovim.
