@@ -21,12 +21,11 @@ return {
 				-- Use a sub-list to run only the first available formatter
 			},
 			format_on_save = {
-				timeout_ms = 3000,
+				timeout_ms = 7000, -- default value 3000 changed it due to hdd limitation
 				async = false,
 				quiet = false,
 				lsp_format = "fallback",
 			},
-			notify_on_error = false,
 		},
 	},
 }
