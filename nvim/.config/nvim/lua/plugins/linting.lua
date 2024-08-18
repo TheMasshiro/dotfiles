@@ -14,7 +14,6 @@ return {
 			cpp = { "cpplint" },
 			-- Python
 			python = { "ruff" },
-			htmldjango = { "djlint" },
 			-- GO
 			go = { "golangcilint" },
 			-- JS/TS
