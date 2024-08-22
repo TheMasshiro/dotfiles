@@ -8,15 +8,14 @@ return {
 
 		vim.keymap.set("n", "<leader>aa", function()
 			harpoon:list():add()
-		end, { desc = "Add buffer to Harpoon" })
+		end, { desc = "Harpoon: [A]dd" })
 		vim.keymap.set("n", "<leader>ad", function()
 			harpoon:list():remove()
-		end, { desc = "Remove buffer to Harpoon" })
+		end, { desc = "Harpoon: [D]elete" })
 		vim.keymap.set("n", "<C-e>", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 
-		-- Toggle previous & next buffers stored within Harpoon list
 		vim.keymap.set("n", "<C-A-k>", function()
 			harpoon:list():prev()
 		end)
