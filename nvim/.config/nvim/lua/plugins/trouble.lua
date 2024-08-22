@@ -11,10 +11,10 @@ return {
 	},
 	cmd = "Trouble",
 	keys = {
-		{ "<leader>xx", ":Trouble diagnostics toggle<CR>", desc = "Diagnostics (Trouble)" },
-		{ "<leader>xX", ":Trouble diagnostics toggle filter.buf=0<CR>", desc = "Buffer Diagnostics (Trouble)" },
-		{ "<leader>xq", ":Trouble quickfix toggle<CR>", desc = "Quickfix List (Trouble)" },
-		{ "<leader>xl", ":Trouble loclist toggle<CR>", desc = "Location List (Trouble)" },
-		{ "<leader>xt", ":Trouble todo toggle<CR>", desc = "Trouble Todos (Trouble)" },
+		{ "<leader>xd", ":Trouble diagnostics toggle<CR>", desc = "Trouble: [D]iagnostics" },
+		{ "<leader>xb", ":Trouble diagnostics toggle filter.buf=0<CR>", desc = "Trouble: [B]uffer Diagnostics" },
+		{ "<leader>xq", ":Trouble quickfix toggle<CR>", desc = "Trouble: [Q]uickfix List" },
+		{ "<leader>xl", ":Trouble loclist toggle<CR>", desc = "Trouble: [L]ocation List" },
+		{ "<leader>xt", ":Trouble todo toggle<CR>", desc = "Trouble: [T]odos" },
 	},
 }
