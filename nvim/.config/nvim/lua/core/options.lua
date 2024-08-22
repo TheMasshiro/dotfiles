@@ -1,40 +1,36 @@
-local option = vim.opt
+local opt = vim.opt
 
-option.guicursor = ""
+opt.tabstop = 4
+opt.shiftwidth = 4
 
-option.number = true
-option.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 
-option.tabstop = 4
-option.shiftwidth = 4
-option.expandtab = true
-option.autoindent = true
+opt.guicursor = ""
+opt.mouse = "a"
+opt.showmode = false
 
-option.wrap = false
+vim.schedule(function()
+	opt.clipboard = "unnamedplus"
+end)
 
-option.ignorecase = true
-option.smartcase = true
+opt.breakindent = true
 
-option.termguicolors = true
+opt.undofile = true
+opt.backup = false
 
-option.backspace = "indent,eol,start"
+opt.ignorecase = true
+opt.smartcase = true
 
-option.clipboard:append("unnamedplus")
+opt.signcolumn = "yes"
+opt.scrolloff = 10
 
-option.cursorline = true
+opt.updatetime = 250
+opt.timeoutlen = 300
 
-option.splitright = true
-option.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
-option.scrolloff = 8
-option.signcolumn = "yes"
-option.isfname:append("@-@")
+opt.inccommand = "split"
 
-option.showtabline = 0
-
-option.updatetime = 50
-
-option.swapfile = false
-option.backup = false
-option.undodir = os.getenv("HOME") .. "/.dotfiles/nvim/.config/nvim/undodir"
-option.undofile = true
+opt.cursorline = true
