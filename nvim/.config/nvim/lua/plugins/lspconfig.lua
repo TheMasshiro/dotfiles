@@ -4,127 +4,144 @@ return {
 		ft = "lua",
 		opts = {
 			library = {
-				"lazy.nvim",
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
 			},
 		},
 	},
+	{ "Bilal2453/luvit-meta", lazy = true },
 	{
 		"neovim/nvim-lspconfig",
-		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
+			{ "williamboman/mason.nvim", config = true },
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+
+			{ "j-hui/fidget.nvim", opts = {} },
 			"hrsh7th/cmp-nvim-lsp",
-			{ "antosha417/nvim-lsp-file-operations", config = true },
 		},
 		config = function()
-			-- import lspconfig plugin
-			local lspconfig = require("lspconfig")
-
-			-- import mason_lspconfig plugin
-			local mason_lspconfig = require("mason-lspconfig")
-
-			-- import cmp-nvim-lsp plugin
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-			local keymap = vim.keymap -- for conciseness
-
 			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-				callback = function(ev)
-					local opts = { buffer = ev.buf, silent = true }
+				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+				callback = function(event)
+					local map = function(keys, func, desc)
+						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+					end
+					map("<leader>ld", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+					map("<leader>lr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+					map("<leader>lI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+					map(
+						"<leader>ws",
+						require("telescope.builtin").lsp_dynamic_workspace_symbols,
+						"[W]orkspace [S]ymbols"
+					)
+					map("<leader>lk", vim.lsp.buf.hover, "Hover Snippet")
+					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+					map("<leader>lD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-					-- set keybinds
-					opts.desc = "Show References (LSP)"
-					keymap.set("n", "<leader>lgR", ":Telescope lsp_references<CR>", opts) -- show definition, references
+					local client = vim.lsp.get_client_by_id(event.data.client_id)
+					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+						local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
+						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+							buffer = event.buf,
+							group = highlight_augroup,
+							callback = vim.lsp.buf.document_highlight,
+						})
 
-					opts.desc = "Go to Declaration (LSP)"
-					keymap.set("n", "<leader>lgD", vim.lsp.buf.declaration, opts) -- go to declaration
+						vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+							buffer = event.buf,
+							group = highlight_augroup,
+							callback = vim.lsp.buf.clear_references,
+						})
 
-					opts.desc = "Show Definitions (LSP)"
-					keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-
-					opts.desc = "Show Implementations (LSP)"
-					keymap.set("n", "<leader>li", ":Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-
-					opts.desc = "Show Type Definitions (LSP)"
-					keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-
-					opts.desc = "Format Buffer"
-					keymap.set("n", "<leader>bf", vim.lsp.buf.format, opts)
-
-					opts.desc = "Show Diagnostics (LSP)"
-					keymap.set("n", "<leader>lD", ":Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-
-					opts.desc = "Show Line Diagnostics (LSP)"
-					keymap.set("n", "<leader>ll", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-					opts.desc = "Jump to previous diagnostic"
-					keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-					opts.desc = "Jump to next diagnostic"
-					keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
-					opts.desc = "Hover Snippet (LSP)"
-					keymap.set("n", "<leader>lk", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-					opts.desc = "Restart (LSP)"
-					keymap.set("n", "<leader>lq", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+						vim.api.nvim_create_autocmd("LspDetach", {
+							group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
+							callback = function(event2)
+								vim.lsp.buf.clear_references()
+								vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
+							end,
+						})
+					end
+					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+						map("<leader>lh", function()
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+						end, "[T]oggle Inlay [H]ints")
+					end
 				end,
 			})
 
-			-- used to enable autocompletion (assign to every lsp server config)
-			local capabilities = cmp_nvim_lsp.default_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-			mason_lspconfig.setup_handlers({
-				-- default handler for installed servers
-				function(server_name)
-					lspconfig[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
-				["pyright"] = function()
-					lspconfig["pyright"].setup({
-						capabilities = capabilities,
-						settings = {
-							python = {
-								analysis = { diagnosticMode = "off", typeCheckingMode = "off" },
+			local servers = {
+				-- clangd = {},
+				-- pyright = {},
+
+				lua_ls = {
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+							completion = {
+								callSnippet = "Replace",
 							},
 						},
-					})
-				end,
-				["emmet_language_server"] = function()
-					-- configure emmet language server
-					lspconfig["emmet_language_server"].setup({
-						capabilities = capabilities,
-						filetypes = {
-							"html",
-							"htmldjango",
-							"typescriptreact",
-							"javascriptreact",
-							"css",
-							"sass",
-							"scss",
-							"less",
-							"svelte",
-						},
-					})
-				end,
-				["lua_ls"] = function()
-					-- configure lua server (with special settings)
-					lspconfig["lua_ls"].setup({
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								-- make the language server recognize "vim" global
-								diagnostics = {
-									globals = { "vim" },
-								},
-								completion = {
-									callSnippet = "Replace",
-								},
-							},
-						},
-					})
-				end,
+					},
+				},
+			}
+
+			require("mason").setup()
+
+			local ensure_installed = vim.tbl_keys(servers or {})
+			vim.list_extend(ensure_installed, {
+				-- Others
+				"jsonls",
+				"marksman",
+
+				-- C/C++
+				"clangd",
+				"cpplint",
+				"clang-format",
+
+				-- Go
+				"gopls",
+				"gofumpt",
+				"goimports",
+				"gomodifytags",
+				"golangci-lint",
+				"gotests",
+				"iferr",
+				"impl",
+
+				-- Web
+				"eslint_d",
+				"prettier",
+				"tsserver",
+				"html",
+				"cssls",
+				"emmet_language_server",
+
+				-- Lua
+				"stylua",
+				"lua_ls",
+
+				-- Python
+				"ruff",
+				"djlint",
+				"pyright",
+			})
+			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+			require("mason-lspconfig").setup({
+				handlers = {
+					function(server_name)
+						local server = servers[server_name] or {}
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						require("lspconfig")[server_name].setup(server)
+					end,
+				},
 			})
 		end,
 	},
