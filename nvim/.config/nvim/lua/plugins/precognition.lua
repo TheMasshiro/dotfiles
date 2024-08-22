@@ -3,8 +3,8 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {},
 	config = function()
-		vim.keymap.set("n", "<leader>bA", function()
+		vim.keymap.set("n", "<leader>bm", function()
 			require("precognition").toggle()
-		end, { desc = "Show Motions (Precognition)" })
+		end, { desc = "Show [M]otions" })
 	end,
 }
