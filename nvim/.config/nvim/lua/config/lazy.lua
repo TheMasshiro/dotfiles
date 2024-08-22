@@ -31,6 +31,7 @@ require("lazy").setup({
 		notify = false,
 	},
 	ui = {
+		border = "rounded",
 		icons = vim.g.have_nerd_font and {} or {
 			cmd = "⌘",
 			config = "🛠",
