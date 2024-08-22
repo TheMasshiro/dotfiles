@@ -4,7 +4,11 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local oil = require("oil")
-		oil.setup({})
-		vim.keymap.set("n", "<leader>fd", oil.toggle_float, { desc = "Open Directory (Oil)" })
+		oil.setup({
+			keymaps = {
+				["\\"] = { callback = "actions.close", mode = "n" },
+			},
+		})
+		vim.keymap.set("n", "\\e", oil.toggle_float, { desc = "Oil: Open [E]xplorer" })
 	end,
 }
