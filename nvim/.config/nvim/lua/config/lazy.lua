@@ -10,7 +10,8 @@ vim.opt.rtp:prepend(lazypath)
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
+vim.g.have_nerd_font = true
 
 -- vim.opts
 require("core.options")
@@ -30,7 +31,21 @@ require("lazy").setup({
 		notify = false,
 	},
 	ui = {
-		border = "rounded",
+		icons = vim.g.have_nerd_font and {} or {
+			cmd = "⌘",
+			config = "🛠",
+			event = "📅",
+			ft = "📂",
+			init = "⚙",
+			keys = "🗝",
+			plugin = "🔌",
+			runtime = "💻",
+			require = "🌙",
+			source = "📄",
+			start = "🚀",
+			task = "📌",
+			lazy = "💤 ",
+		},
 	},
 	change_detection = {
 		notify = false,
