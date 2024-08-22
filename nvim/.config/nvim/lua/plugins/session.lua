@@ -4,12 +4,11 @@ return {
 	config = function()
 		require("auto-session").setup({
 			auto_restore_enabled = false,
-			auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "~/Desktop", "/" },
+			auto_session_suppress_dirs = { "~/", "~/Downloads", "~/Desktop", "/" },
 		})
+		vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-		vim.o.sessionoptions = "localoptions"
-
-		vim.keymap.set("n", "<leader>wr", ":SessionRestore<CR>", { desc = "Restore session (Session)" })
-		vim.keymap.set("n", "<leader>ws", ":SessionSave<CR>", { desc = "Save session (Session)" })
+		vim.keymap.set("n", "<leader>er", ":SessionRestore<CR>", { desc = "[R]estore session" })
+		vim.keymap.set("n", "<leader>es", ":SessionSave<CR>", { desc = "[S]ave session" })
 	end,
 }
