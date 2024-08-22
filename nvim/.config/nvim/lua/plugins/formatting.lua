@@ -2,29 +2,40 @@ return {
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
+		cmd = { "ConformInfo" },
+		keys = {
+			{
+				"<leader>bf",
+				function()
+					require("conform").format({ async = true, lsp_fallback = true })
+				end,
+				mode = "",
+				desc = "[F]ormat buffer",
+			},
+		},
 		opts = {
+			notify_on_error = false,
+			format_on_save = function(bufnr)
+				local disable_filetypes = { c = true, cpp = true }
+				return {
+					timeout_ms = 3000,
+					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+				}
+			end,
 			formatters_by_ft = {
-				-- Conform will run multiple formatters sequentially
-				lua = { "stylua" },
-				python = { "isort", "ruff_format" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				html = { "prettier" },
 				css = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
+				go = { "gofmt", "goimports" },
+				html = { "prettier" },
 				htmldjango = { "djlint" },
-				go = { "goimports", "gofmt" },
-				-- Use a sub-list to run only the first available formatter
-			},
-			format_on_save = {
-				timeout_ms = 7000, -- default value 3000 changed it due to hdd limitation
-				async = false,
-				quiet = false,
-				lsp_format = "fallback",
+				javascript = { "prettier" },
+				json = { "prettier" },
+				lua = { "stylua" },
+				markdown = { "prettier" },
+				python = { "isort", "ruff_format" },
+				typescript = { "prettier" },
+				yaml = { "prettier" },
 			},
 		},
 	},
