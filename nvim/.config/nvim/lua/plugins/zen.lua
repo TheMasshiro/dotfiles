@@ -4,7 +4,7 @@ return {
 		{
 			"<leader>zz",
 			":ZenMode<CR>",
-			desc = "Toggle Zen Mode",
+			desc = "[Z]en Mode",
 		},
 	},
 	opts = {
