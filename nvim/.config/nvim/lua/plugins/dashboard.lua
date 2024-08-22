@@ -81,6 +81,15 @@ return {
 						key_format = " %s",
 						action = "Telescope git_files",
 					},
+					{
+						icon = "󰚰 ",
+						icon_hl = "Title",
+						desc = "Lazy Update",
+						desc_hl = "String",
+						key_hl = "Number",
+						key_format = " %s",
+						action = "Lazy update",
+					},
 				},
 				footer = {
 					"                                   ",
