@@ -32,7 +32,7 @@ require("lazy").setup({
 	},
 	ui = {
 		border = "rounded",
-		icons = vim.g.have_nerd_font and {} or {
+		icons = {
 			cmd = "⌘",
 			config = "🛠",
 			event = "📅",
@@ -46,6 +46,8 @@ require("lazy").setup({
 			start = "🚀",
 			task = "📌",
 			lazy = "💤 ",
+			loaded = "✓",
+			not_loaded = "✗",
 		},
 	},
 	change_detection = {
