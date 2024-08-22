@@ -1,67 +1,37 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
-		dependencies = {
-			"windwp/nvim-ts-autotag",
+		opts = {
+			ensure_installed = {
+				"bash",
+				"c",
+				"diff",
+				"html",
+				"lua",
+				"luadoc",
+				"markdown",
+				"markdown_inline",
+				"query",
+				"vim",
+				"vimdoc",
+			},
+			auto_install = true,
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = { "ruby" },
+			},
+			indent = { enable = true, disable = { "ruby" } },
 		},
-		config = function()
-			local treesitter = require("nvim-treesitter.configs")
-
-			treesitter.setup({
-				highlight = {
-					enable = true,
-				},
-
-				indent = { enable = true },
-
-				autotag = {
-					enable = true,
-				},
-
-				ensure_installed = {
-					"bash",
-					"c",
-					"cpp",
-					"css",
-					"dockerfile",
-					"gitignore",
-					"go",
-					"html",
-					"javascript",
-					"json",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"python",
-					"query",
-					"regex",
-					"rust",
-					"typescript",
-					"vim",
-					"vimdoc",
-					"yaml",
-				},
-				auto_install = true,
-			})
+		config = function(_, opts)
+			---@diagnostic disable-next-line: missing-fields
+			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			local ts_context = require("treesitter-context")
-			ts_context.setup()
-
-			vim.keymap.set("n", "[c", function()
-				ts_context.go_to_context(vim.v.count1)
-			end, { silent = true, desc = "Jump to context (Treesitter)" })
-		end,
-	},
-	{
-		"RRethy/vim-illuminate",
-		event = { "BufReadPre", "BufNewFile" },
+		opts = {},
 	},
 	{
 		"folke/ts-comments.nvim",
@@ -72,7 +42,7 @@ return {
 	{
 		"Wansmer/treesj",
 		event = { "BufReadPre", "BufNewFile" },
-		keys = { { "<space>bm", ":TSJToggle<CR>", desc = "Toggle Join (TSJ)" } },
+		keys = { { "<leader>bj", ":TSJToggle<CR>", desc = "Toggle [J]oin" } },
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
 		opts = { use_default_keymaps = false },
 	},
