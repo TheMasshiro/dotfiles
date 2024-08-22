@@ -1,13 +1,8 @@
 return {
 	"mfussenegger/nvim-lint",
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-		"InsertLeave",
-	},
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
-
 		lint.linters_by_ft = {
 			-- C/C++
 			c = { "cpplint" },
@@ -29,10 +24,9 @@ return {
 			end,
 		}
 
-		local lint_auroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
+		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-			group = lint_auroup,
+			group = lint_augroup,
 			callback = function()
 				lint.try_lint()
 			end,
@@ -40,6 +34,6 @@ return {
 
 		vim.keymap.set("n", "<leader>bl", function()
 			lint.try_lint()
-		end, { desc = "Lint Buffer (Linter)" })
+		end, { desc = "[L]int Buffer" })
 	end,
 }
