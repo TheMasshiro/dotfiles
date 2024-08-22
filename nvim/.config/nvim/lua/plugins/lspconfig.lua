@@ -75,8 +75,27 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local servers = {
-				-- clangd = {},
-				-- pyright = {},
+				emmet_language_server = {
+					filetypes = {
+						"html",
+						"htmldjango",
+						"typescriptreact",
+						"javascriptreact",
+						"css",
+						"sass",
+						"scss",
+						"less",
+						"svelte",
+					},
+				},
+
+				pyright = {
+					settings = {
+						python = {
+							analysis = { diagnosticMode = "off", typeCheckingMode = "off" },
+						},
+					},
+				},
 
 				lua_ls = {
 					settings = {
