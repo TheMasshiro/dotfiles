@@ -3,47 +3,56 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
-			sign_priority = 15, -- higher than diagnostic,todo signs. lower than dapui breakpoint sign
 			on_attach = function(bufnr)
-				local gs = package.loaded.gitsigns
+				local gitsigns = require("gitsigns")
 
-				local function map(mode, l, r, desc)
-					vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+				local function map(mode, l, r, opts)
+					opts = opts or {}
+					opts.buffer = bufnr
+					vim.keymap.set(mode, l, r, opts)
 				end
 
 				-- Navigation
-				map("n", "]h", gs.next_hunk, "Next Hunk (gitsigns)")
-				map("n", "[h", gs.prev_hunk, "Prev Hunk")
+				map("n", "]h", function()
+					if vim.wo.diff then
+						vim.cmd.normal({ "]h", bang = true })
+					else
+						gitsigns.nav_hunk("next")
+					end
+				end, { desc = "Jump to next git c[h]ange" })
+				map("n", "[h", function()
+					if vim.wo.diff then
+						vim.cmd.normal({ "[h", bang = true })
+					else
+						gitsigns.nav_hunk("prev")
+					end
+				end, { desc = "Jump to previous git c[h]ange" })
 
 				-- Actions
-				map("n", "<leader>gs", gs.stage_hunk, "Stage hunk (gitsigns)")
-				map("n", "<leader>gr", gs.reset_hunk, "Reset hunk (gitsigns)")
+				-- Visual mode
 				map("v", "<leader>gs", function()
-					gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, "Stage hunk (gitsigns)")
+					gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, { desc = "stage git hunk" })
 				map("v", "<leader>gr", function()
-					gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, "Reset hunk (gitsigns)")
+					gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, { desc = "reset git hunk" })
 
-				map("n", "<leader>gS", gs.stage_buffer, "Stage buffer (gitsigns)")
-				map("n", "<leader>gR", gs.reset_buffer, "Reset buffer (gitsigns)")
-
-				map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk (gitsigns)")
-
-				map("n", "<leader>gp", gs.preview_hunk, "Preview hunk (gitsigns)")
-
-				map("n", "<leader>gB", function()
-					gs.blame_line({ full = true })
-				end, "Blame line (gitsigns)")
-				map("n", "<leader>gb", gs.toggle_current_line_blame, "Toggle line blame (gitsigns)")
-
-				map("n", "<leader>gd", gs.diffthis, "Diff this (gitsigns)")
+				-- normal mode
+				map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "git [s]tage hunk" })
+				map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "git [r]eset hunk" })
+				map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "git [S]tage buffer" })
+				map("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "git [u]ndo stage hunk" })
+				map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git [R]eset buffer" })
+				map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
+				map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
+				map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 				map("n", "<leader>gD", function()
-					gs.diffthis("~")
-				end, "Diff this ~ (gitsigns)")
+					gitsigns.diffthis("@")
+				end, { desc = "git [D]iff against last commit" })
 
-				-- Text object
-				map({ "o", "x" }, "gi", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk (gitsigns)")
+				-- Toggles
+				map("n", "<leader>gtb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
+				map("n", "<leader>gtD", gitsigns.toggle_deleted, { desc = "[T]oggle git show [D]eleted" })
 			end,
 		},
 	},
@@ -53,7 +62,6 @@ return {
 	},
 	{
 		"isakbm/gitgraph.nvim",
-		---@type I.GGConfig
 		opts = {
 			symbols = {
 				merge_commit = "M",
@@ -78,7 +86,7 @@ return {
 				function()
 					require("gitgraph").draw({}, { all = true, max_count = 5000 })
 				end,
-				desc = "GitGraph - Draw",
+				desc = "git [G]raph",
 			},
 		},
 	},
