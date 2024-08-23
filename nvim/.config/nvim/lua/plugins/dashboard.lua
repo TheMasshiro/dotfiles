@@ -86,9 +86,10 @@ return {
 						icon_hl = "Title",
 						desc = "Lazy Update",
 						desc_hl = "String",
+						key = "U",
 						key_hl = "Number",
 						key_format = " %s",
-						action = "Lazy update",
+						action = "Lazy sync",
 					},
 				},
 				footer = {
