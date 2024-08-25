@@ -39,6 +39,7 @@ return {
 					map("<leader>lk", vim.lsp.buf.hover, "Hover Snippet")
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>lD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
