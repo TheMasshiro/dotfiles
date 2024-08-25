@@ -6,4 +6,9 @@ return {
 		"RRethy/vim-illuminate",
 		event = { "BufReadPre", "BufNewFile" },
 	},
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 }
