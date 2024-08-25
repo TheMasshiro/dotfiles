@@ -61,8 +61,8 @@ function getPath {
 function openSheet {
     if [[ "$1" == "" ]]; then exit; fi # Exit if empty string
     case "$openMode" in
-        tmux) tmux neww bash -c "curl -sg "cht.sh/$*" | less -R";;
-        bash) curl -sg "cht.sh/$*" | less -R;;
+        tmux) tmux neww bash -c "curl -sg "cht.sh/$*" | bat";;
+        bash) curl -sg "cht.sh/$*" | bat ;;
         *) echo "Unknown openMode, set -t to use tmux, or no args to use bash directly"
     esac
 }
@@ -115,7 +115,7 @@ function cachePreview {
 
     # Exists in cache
     if [ -f "$CACHE_DIR/$*.sheet" ]; then
-        cat "$CACHE_DIR/$*.sheet"
+        bat "$CACHE_DIR/$*.sheet"
         exit
     fi
 
