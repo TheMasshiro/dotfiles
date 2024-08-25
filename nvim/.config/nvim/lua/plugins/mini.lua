@@ -16,10 +16,34 @@ return {
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup()
 
+		-- Replace/exchange/duplicate text/sort text
+		--
+		-- - g= - Evaluate text and replace with output
+		-- - gx - Exchange text regions
+		-- - gm - Duplicate text
+		-- - <leader>s - Replace selection with clipboard (visual)
+		-- - <leader>ss - Replace line with clipboard (normal)
+		-- - gs - Sort text
+		require("mini.operators").setup({
+			replace = {
+				prefix = "<leader>s",
+			},
+		})
+
 		-- :Git command for executing any git call inside file's repository root with deeper current instance integration (show output as notification/buffer, use to edit commit messages, etc.).
 		--
 		require("mini.git").setup()
 
+		local notify = require("mini.notify")
+		notify.setup()
+		vim.notify = notify.make_notify()
+
+		vim.api.nvim_create_autocmd("BufWritePost", {
+			callback = function()
+				local filename = vim.fn.expand("%:t")
+				vim.notify("File saved: " .. filename, vim.log.levels.INFO, {})
+			end,
+		})
 		-- ... and there is more!
 		--  Check out: https://github.com/echasnovski/mini.nvim
 	end,
