@@ -1,7 +1,7 @@
 local opt = vim.opt
 
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 
 opt.number = true
 opt.relativenumber = true
@@ -18,6 +18,7 @@ opt.breakindent = true
 
 opt.undofile = true
 opt.backup = false
+opt.swapfile = false
 
 opt.ignorecase = true
 opt.smartcase = true
@@ -34,3 +35,6 @@ opt.splitbelow = true
 opt.inccommand = "split"
 
 opt.cursorline = true
+opt.cmdheight = 0
+
+vim.opt.termguicolors = true
