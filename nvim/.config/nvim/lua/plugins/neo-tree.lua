@@ -12,8 +12,9 @@ return {
 			"\\f",
 			":Neotree reveal<CR>",
 			desc = "Neotree: [F]ile tree",
+			silent = true,
 		},
-		{ "\\g", ":Neotree toggle git_status<CR>", desc = "Neotree: [G]it tree" },
+		{ "\\g", ":Neotree toggle git_status<CR>", desc = "Neotree: [G]it tree", silent = true },
 	},
 	opts = {
 		filesystem = {

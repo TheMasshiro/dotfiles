@@ -72,10 +72,20 @@ return {
 						key_format = " %s",
 						action = "Telescope git_files",
 					},
+					{
+						icon = "? ",
+						icon_hl = "Title",
+						desc = "Help",
+						desc_hl = "String",
+						key = "SPC f h",
+						key_hl = "Number",
+						key_format = " %s",
+						action = "Telescope help_tags",
+					},
 				},
 				footer = {
 					"                                   ",
-					"🚀 Small improvements, big impacts.",
+					"🚀 Right tool for the right job.",
 				},
 			},
 		})
