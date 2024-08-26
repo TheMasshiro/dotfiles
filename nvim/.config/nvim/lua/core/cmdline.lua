@@ -1,3 +1,5 @@
+-- credits: https://github.com/OXY2DEV
+
 local cmd = {}
 
 --- Turns a list of chunks into a string
