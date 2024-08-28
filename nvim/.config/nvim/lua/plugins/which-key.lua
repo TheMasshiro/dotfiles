@@ -4,14 +4,13 @@ return {
 	opts = {
 		spec = {
 			{
-				mode = { "n", "x" },
 				{ "<leader>a", group = "H[A]rpoon" },
 				{ "<leader>b", group = "[B]uffer" },
-				{ "<leader>c", group = "A[C]tion" },
+				{ "<leader>c", group = "[C]ode", mode = { "n", "x" } },
 				{ "<leader>d", group = "[D]ebugger" },
 				{ "<leader>e", group = "S[E]ssion" },
 				{ "<leader>f", group = "[F]ile" },
-				{ "<leader>g", group = "[G]it" },
+				{ "<leader>g", group = "[G]it", mode = { "n", "x" } },
 				{ "<leader>h", group = "[H]arpoon" },
 				{ "<leader>l", group = "[L]sp" },
 				{ "<leader>n", group = "[D]atabase" },
@@ -20,11 +19,12 @@ return {
 				{ "<leader>t", group = "[T]ests" },
 				{ "<leader>w", group = "[W]orkspace" },
 				{ "<leader>x", group = "quickfi[X]" },
-				-- { "<leader>y", group = "[Y]ank" },
+				-- { "<leader>y", group = "[Y]ank" }, for future use if ever there's a plugin for yank that stores yanked texts
 				{ "<leader>z", group = "[Z]en" },
 				{ "<leader>gt", group = "[G]it [T]oggle" },
 			},
 		},
+
 		icons = {
 			mappings = vim.g.have_nerd_font,
 			keys = vim.g.have_nerd_font and {} or {
