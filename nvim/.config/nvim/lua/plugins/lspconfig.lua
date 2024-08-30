@@ -91,14 +91,6 @@ return {
 					},
 				},
 
-				pyright = {
-					settings = {
-						python = {
-							analysis = { diagnosticMode = "off", typeCheckingMode = "off" },
-						},
-					},
-				},
-
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -159,8 +151,10 @@ return {
 
 				-- Python
 				"ruff",
-				"djlint",
-				"pyright",
+				"mypy",
+				"isort",
+				"jedi_language_server",
+				"djlint", -- For web
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
