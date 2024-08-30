@@ -8,7 +8,7 @@ return {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
 			-- Python
-			python = { "ruff" },
+			python = { "ruff", "mypy" },
 			-- GO
 			go = { "golangcilint" },
 			-- JS/TS
