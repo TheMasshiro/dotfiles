@@ -35,6 +35,5 @@ opt.splitbelow = true
 opt.inccommand = "split"
 
 opt.cursorline = true
-opt.cmdheight = 0
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
