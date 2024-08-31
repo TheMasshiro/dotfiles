@@ -30,8 +30,17 @@ return {
 					"                                    ",
 					"                                    ",
 				},
-				-- icon = " ",
 				center = {
+					{
+						icon = " ",
+						icon_hl = "Title",
+						desc = "Last Session",
+						desc_hl = "String",
+						key = "SPC w a",
+						key_hl = "Number",
+						key_format = " %s",
+						action = ":lua require('persistence').load({ last = true })",
+					},
 					{
 						icon = " ",
 						icon_hl = "Title",
