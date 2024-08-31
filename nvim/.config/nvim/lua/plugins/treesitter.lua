@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = "VeryLazy",
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs",
 		opts = {
@@ -23,18 +24,37 @@ return {
 				additional_vim_regex_highlighting = { "ruby" },
 			},
 			indent = { enable = true, disable = { "ruby" } },
+			textobjects = {
+				move = {
+					enable = true,
+					goto_next_start = {
+						["]f"] = "@function.outer",
+						["]c"] = "@class.outer",
+						["]a"] = "@parameter.inner",
+					},
+					goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+					goto_previous_start = {
+						["[f"] = "@function.outer",
+						["[c"] = "@class.outer",
+						["[a"] = "@parameter.inner",
+					},
+					goto_previous_end = {
+						["[F"] = "@function.outer",
+						["[C"] = "@class.outer",
+						["[A"] = "@parameter.inner",
+					},
+				},
+			},
 		},
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-context",
+		"windwp/nvim-ts-autotag",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 	},
 	{
-		"folke/ts-comments.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
-		enabled = vim.fn.has("nvim-0.10.0") == 1,
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		event = "VeryLazy",
 	},
 	{
 		"Wansmer/treesj",
