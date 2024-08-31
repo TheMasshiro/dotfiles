@@ -4,26 +4,41 @@ return {
 	priority = 1000,
 	opts = {
 		flavour = "mocha", -- latte, frappe, macchiato, mocha, or auto
-		no_italic = true,
-		term_colors = true,
-		transparent_background = false,
-		styles = {
-			comments = {},
-			conditionals = {},
-			loops = {},
-			functions = {},
-			keywords = {},
-			strings = {},
-			variables = {},
-			numbers = {},
-			booleans = {},
-			properties = {},
-			types = {},
+		integrations = {
+			cmp = true,
+			dadbod_ui = true,
+			dap = true,
+			dap_ui = true,
+			dashboard = true,
+			fidget = true,
+			flash = true,
+			grug_far = true,
+			gitsigns = true,
+			harpoon = true,
+			lsp_trouble = true,
+			mason = true,
+			markdown = true,
+			mini = true,
+			native_lsp = {
+				enabled = true,
+				underlines = {
+					errors = { "undercurl" },
+					hints = { "undercurl" },
+					warnings = { "undercurl" },
+					information = { "undercurl" },
+				},
+			},
+			neotest = true,
+			neotree = true,
+			render_markdown = true,
+			semantic_tokens = true,
+			telescope = true,
+			treesitter = true,
+			treesitter_context = true,
+			which_key = true,
 		},
 
 		function()
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
