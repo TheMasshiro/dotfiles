@@ -17,6 +17,7 @@ return {
 				{ "<leader>r", group = "[R]efactor" },
 				{ "<leader>s", group = "[S]ubstitute" },
 				{ "<leader>t", group = "[T]ests" },
+				{ "<leader>v", group = "Terminal" },
 				{ "<leader>w", group = "[W]orkspace" },
 				{ "<leader>x", group = "quickfi[X]" },
 				-- { "<leader>y", group = "[Y]ank" }, for future use if ever there's a plugin for yank that stores yanked texts
