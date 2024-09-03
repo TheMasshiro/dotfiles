@@ -10,4 +10,11 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
+	{
+		"kawre/neotab.nvim",
+		event = "InsertEnter",
+		opts = {
+			-- configuration goes here
+		},
+	},
 }
