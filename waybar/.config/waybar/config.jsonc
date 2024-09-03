@@ -37,7 +37,7 @@
             "7": "7",
             "8": "󰙯",
             "9": "",
-            "10": "",
+            "10": " ",
             "urgent": ""
         }
     },
@@ -48,8 +48,8 @@
         "start-activated": true,
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         },
         "tooltip": true,
         "tooltip-format-activated": "Idle off",
