@@ -7,10 +7,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selected 
 
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
+keymap.set("n", "<leader>vv", [[:vsplit | terminal<CR>A]], { desc = "Open terminal in [V]ertical split" })
+keymap.set("n", "<leader>vh", [[:split | terminal<CR>A]], { desc = "Open terminal in [H]orizontal split" })
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal insert mode" })
