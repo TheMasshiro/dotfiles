@@ -6,6 +6,7 @@ return {
 		oil.setup({
 			keymaps = {
 				["\\"] = { callback = "actions.close", mode = "n" },
+				["q"] = { callback = "actions.close", mode = "n" },
 			},
 
 			view_options = {
