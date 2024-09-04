@@ -88,16 +88,17 @@
         "format-muted": "",
         "format-icons": {
             "default": [
-                "",
-                "",
+                " ",
+                " ",
                 " "
             ]
         },
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "tooltip": false,
+        "tooltip": true,
         "on-click": "wlogout &",
-        "format": "⏻"
+        "format": "⏻",
+        "tooltip-format": "Shutdown"
     }
 }
