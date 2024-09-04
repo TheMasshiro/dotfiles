@@ -11,9 +11,9 @@ if [[ $1 = "toggle" ]]; then
 fi
 
 if pgrep -x "gammastep" > /dev/null; then
-	echo ""
+	echo ""
 	echo "Nightlight is on"
 else
-	echo ""
+	echo ""
 	echo "Nightlight is off"
 fi

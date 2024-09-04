@@ -13,9 +13,9 @@
         "custom/separator",
         "tray",
         "custom/separator",
-        "idle_inhibitor",
-        "custom/separator",
         "custom/gammastep",
+        "custom/separator",
+        "idle_inhibitor",
         "custom/separator",
         "pulseaudio",
         "custom/separator",
@@ -35,9 +35,9 @@
             "5": "5",
             "6": "6",
             "7": "7",
-            "8": "󰙯",
-            "9": "",
-            "10": " ",
+            "8": "8",
+            "9": "9",
+            "10": "0",
             "urgent": ""
         }
     },
@@ -48,8 +48,8 @@
         "start-activated": true,
         "format": "{icon}",
         "format-icons": {
-            "activated": " ",
-            "deactivated": " "
+            "activated": "󰆢",
+            "deactivated": "󰝤"
         },
         "tooltip": true,
         "tooltip-format-activated": "Idle off",
