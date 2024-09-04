@@ -84,7 +84,7 @@ return {
 				},
 				footer = {
 					"                                   ",
-					"🚀 Right tool for the right job.",
+					"🚀 Right tool for the right job",
 				},
 			},
 		})
