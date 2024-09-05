@@ -1,10 +1,26 @@
 return {
 	"tris203/precognition.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	opts = {},
-	config = function()
-		vim.keymap.set("n", "<leader>bm", function()
-			require("precognition").toggle()
-		end, { desc = "Show [M]otions" })
-	end,
+	keys = {
+		{
+			"<leader>bm",
+			function()
+				require("precognition").toggle()
+			end,
+			desc = "Show [M]otions",
+		},
+	},
+	opts = {
+		startVisible = false,
+		disabled_fts = {
+			"qf",
+			"netrw",
+			"NvimTree",
+			"lazy",
+			"mason",
+			"oil",
+			"neo-tree",
+			"dbui",
+			"dashboard",
+		},
+	},
 }
