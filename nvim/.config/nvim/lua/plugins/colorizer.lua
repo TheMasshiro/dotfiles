@@ -1,7 +1,11 @@
 return {
 	"norcalli/nvim-colorizer.lua",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		require("colorizer").setup()
-	end,
+	keys = {
+		{
+			"<leader>bc",
+			":ColorizerToggle<CR>",
+			desc = "Toggle [C]olor Highlights",
+		},
+	},
+	opts = {},
 }
