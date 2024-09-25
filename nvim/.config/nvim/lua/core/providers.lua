@@ -1,4 +1,5 @@
 local provider = vim.g
 
 -- Python Provider
-provider.python3_host_prog = "/home/masshiro/.pyenv/shims/python"
+local python_provider = ".local/share/mise/installs/python/latest/bin/python"
+provider.python3_host_prog = vim.fn.expand("$HOME/") .. python_provider
