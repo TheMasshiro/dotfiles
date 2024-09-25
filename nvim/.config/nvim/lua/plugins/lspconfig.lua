@@ -140,7 +140,7 @@ return {
 				-- Web
 				"eslint_d",
 				"prettier",
-				"tsserver",
+				"ts_ls",
 				"html",
 				"cssls",
 				"emmet_language_server",
@@ -162,10 +162,6 @@ return {
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
-						-- https://github.com/neovim/nvim-lspconfig/pull/3232
-						if server_name == "tsserver" then
-							server_name = "ts_ls"
-						end
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
 					end,
