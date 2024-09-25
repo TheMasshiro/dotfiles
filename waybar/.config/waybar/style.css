@@ -9,7 +9,6 @@
 #waybar {
   background: @base;
   color: @text;
-  margin: 2px 2px;
 }
 
 #workspaces {
@@ -31,39 +30,58 @@
   color: @sapphire;
 }
 
-#custom-music,
-#custom-gammastep,
-#tray,
-#clock,
-#pulseaudio,
-#idle_inhibitor,
-#custom-power {
+#custom-separator {
+  color: @surface2;
+  font-size: 16px;
+  padding: 0 3px;
+}
+
+#custom-music {
+  background-color: @base;
+  color: @mauve;
+  padding: 0.1rem 0.2rem;
+  margin: 0 5px;
+}
+
+#tray {
   background-color: @base;
   padding: 0.1rem 0.2rem;
   margin: 0 5px;
 }
 
-#clock {
-  color: @blue;
+#custom-gammastep {
+  background-color: @base;
+  color: @mauve;
+  font-size: 14px;
+  padding: 0 0.5rem 0 0.2rem;
+  margin: 0 2px;
+}
+
+#idle_inhibitor {
+  background-color: @base;
+  color: @mauve;
+  font-size: 14px;
+  padding: 0 0.5rem 0 0.2rem;
+  margin: 0 2px;
 }
 
 #pulseaudio {
+  background-color: @base;
   color: @maroon;
+  padding: 0.1rem 0.2rem;
+  margin: 0 5px;
 }
 
-#idle_inhibitor,
-#custom-music,
-#custom-gammastep {
-  color: @mauve;
+#clock {
+  background-color: @base;
+  color: @blue;
+  padding: 0.1rem 0.2rem;
+  margin: 0 5px;
 }
 
 #custom-power {
+  background-color: @base;
   color: @red;
-  margin-right: 10px;
-}
-
-#custom-separator {
-  color: @surface2;
-  font-size: 16px;
-  padding: 0 3px;
+  padding: 0.1rem 0.2rem;
+  margin: 0 11px 0 3px;
 }
