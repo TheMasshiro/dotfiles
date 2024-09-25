@@ -11,11 +11,11 @@ return {
 			desc = "Harpoon: [A]dd",
 		},
 		{
-			"<leader>ad",
+			"<leader>ar",
 			function()
 				require("harpoon"):list():remove()
 			end,
-			desc = "Harpoon: [A]dd",
+			desc = "Harpoon: [R]emove",
 		},
 		{
 			"<C-e>",
