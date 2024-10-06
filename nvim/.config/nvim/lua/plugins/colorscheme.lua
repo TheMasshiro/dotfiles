@@ -15,6 +15,7 @@ return {
 			grug_far = true,
 			gitsigns = true,
 			harpoon = true,
+			indent_blankline = { enabled = true },
 			lsp_trouble = true,
 			mason = true,
 			markdown = true,
