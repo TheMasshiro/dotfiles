@@ -1,41 +1,39 @@
-local opt = vim.opt
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-opt.number = true
-opt.relativenumber = true
-
-opt.guicursor = ""
-opt.mouse = "a"
-opt.showmode = false
+vim.opt.guicursor = ""
+vim.opt.mouse = "a"
+vim.opt.showmode = false
 
 vim.schedule(function()
-	opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 
-opt.breakindent = true
+vim.opt.breakindent = true
 
-opt.undofile = true
-opt.backup = false
-opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.backup = false
+vim.opt.swapfile = false
 
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-opt.signcolumn = "yes"
-opt.scrolloff = 10
+vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 10
 
-opt.updatetime = 250
-opt.timeoutlen = 300
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-opt.inccommand = "split"
+vim.opt.inccommand = "split"
 
-opt.cursorline = true
+vim.opt.cursorline = true
 
-opt.termguicolors = true
+vim.opt.termguicolors = true
