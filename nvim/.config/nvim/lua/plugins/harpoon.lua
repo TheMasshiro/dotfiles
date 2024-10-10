@@ -36,5 +36,5 @@ return {
 			end,
 		},
 	},
-	opts = {},
 }
+
