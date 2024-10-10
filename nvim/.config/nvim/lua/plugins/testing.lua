@@ -31,7 +31,6 @@ return {
 	},
 	{
 		"nvim-neotest/neotest",
-		ft = { "go", "python" },
 		dependencies = {
 			"nvim-neotest/nvim-nio",
 			"nvim-lua/plenary.nvim",

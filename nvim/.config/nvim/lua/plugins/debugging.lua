@@ -25,7 +25,6 @@ return {
 	},
 	{
 		"mfussenegger/nvim-dap",
-		ft = { "go", "python" },
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
