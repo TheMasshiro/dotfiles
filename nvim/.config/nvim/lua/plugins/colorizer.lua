@@ -7,5 +7,4 @@ return {
 			desc = "Toggle [C]olor Highlights",
 		},
 	},
-	opts = {},
 }
