@@ -14,6 +14,9 @@ return {
 			-- JS/TS
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
+
+			yaml = { "yamllint" },
+			json = { "jsonlint" },
 		}
 
 		local cpp = lint.linters.cpplint
