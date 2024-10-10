@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	cmd = "Trouble",
 	dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
 	opts = {
 		use_diagnostic_signs = true,
@@ -9,7 +10,6 @@ return {
 			cancel = "<C-c>",
 		},
 	},
-	cmd = "Trouble",
 	keys = {
 		{ "<leader>xd", ":Trouble diagnostics toggle<CR>", desc = "Trouble: [D]iagnostics" },
 		{ "<leader>xb", ":Trouble diagnostics toggle filter.buf=0<CR>", desc = "Trouble: [B]uffer Diagnostics" },
