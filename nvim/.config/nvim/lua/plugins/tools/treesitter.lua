@@ -59,7 +59,6 @@ return {
 	{
 		"Wansmer/treesj",
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
-		event = { "BufReadPre", "BufNewFile" },
 		keys = { { "<leader>bj", ":TSJToggle<CR>", desc = "Toggle [J]oin" } },
 		opts = { use_default_keymaps = false },
 	},

@@ -1,7 +1,13 @@
 return {
 	"folke/todo-comments.nvim",
 	cmd = { "TodoTrouble", "TodoTelescope" },
-	event = "VimEnter",
 	dependencies = { "nvim-lua/plenary.nvim" },
+	keys = {
+		{
+			"<leader>ft",
+			"<cmd>TodoTelescope<cr>",
+			desc = "[F]ind [T]odo",
+		},
+	},
 	opts = { signs = false },
 }

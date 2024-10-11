@@ -8,6 +8,7 @@ return {
 			"nvim-neotest/neotest",
 		},
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("neotest").setup({
 				adapters = {
 					require("neotest-golang"),
@@ -22,6 +23,7 @@ return {
 			"nvim-neotest/neotest",
 		},
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("neotest").setup({
 				adapters = {
 					require("neotest-python"),
