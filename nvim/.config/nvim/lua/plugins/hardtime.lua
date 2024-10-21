@@ -12,6 +12,7 @@ return {
 			"neo-tree",
 			"dbui",
 			"dashboard",
+			"diff",
 		},
 	},
 }
