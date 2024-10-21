@@ -118,8 +118,16 @@ return {
 
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				-- Bash
+				"bashls",
+				"beautysh",
+				"shellharden",
+
 				-- Others
 				"jsonls",
+				"yamlls",
+
+				-- Markdown
 				"marksman",
 
 				-- C/C++
@@ -153,7 +161,7 @@ return {
 				"ruff",
 				"mypy",
 				"isort",
-				"jedi_language_server",
+				"pyright",
 				"djlint", -- For web
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
