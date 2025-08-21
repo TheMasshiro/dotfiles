@@ -2,11 +2,12 @@
 
 Personal configuration files for my development environment.
 
-## 📋 Requirements
+## Requirements
 
 ### I'm using Fedora. Use your package manager to install these requirements based on your distro.
 
 - **Git**
+
   ```bash
   sudo dnf install git
   ```
@@ -16,9 +17,10 @@ Personal configuration files for my development environment.
   sudo dnf install stow
   ```
 
-## 🚀 Installation
+## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone git@github.com:TheMasshiro/dotfiles.git ~/dotfiles
    cd ~/dotfiles
@@ -29,6 +31,11 @@ Personal configuration files for my development environment.
    stow .
    ```
 
-## 📝 Notes
+## Additional Tools
+
+- [Rust/Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) - Rust programming language and package manager
+- [Mise](https://github.com/jdx/mise) - Runtime version manager for multiple languages
+
+## Notes
 
 - Backup your existing dotfiles before installation
