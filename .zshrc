@@ -70,7 +70,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Load Theme
+source ~/theme.zsh
+
 # Completion Styling
+zstyle ':fzf-tab:*' fzf-flags $(echo $FZF_DEFAULT_OPTS)
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
@@ -78,6 +82,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $real
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
+alias cheat="~/bin/chtfzf.sh"
 alias ls="eza --icons=always"
 
 # Shell integrations
