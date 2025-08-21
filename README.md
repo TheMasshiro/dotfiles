@@ -4,6 +4,8 @@ Personal configuration files for my development environment.
 
 ## 📋 Requirements
 
+### I'm using Fedora. Use your package manager to install these requirements based on your distro.
+
 - **Git**
   ```bash
   sudo dnf install git
@@ -14,7 +16,7 @@ Personal configuration files for my development environment.
   sudo dnf install stow
   ```
 
-## Installation
+## 🚀 Installation
 
 1. Clone the repository:
    ```bash
@@ -27,6 +29,6 @@ Personal configuration files for my development environment.
    stow .
    ```
 
-## Notes
+## 📝 Notes
 
 - Backup your existing dotfiles before installation
