@@ -17,24 +17,23 @@ vim.opt.mouse = "a"
 -- Don't show current mode (handled by statusline)
 vim.opt.showmode = false
 
-
 -- Use win32yank for wsl
 vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-        ["+"] = "win32yank.exe -i --crlf",
-        ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-        ["+"] = "win32yank.exe -o --lf",
-        ["*"] = "win32yank.exe -o --lf",
-    },
-    cache_enabled = true,
+	name = "win32yank-wsl",
+	copy = {
+		["+"] = os.getenv("WIN32YANK") .. " -i --crlf",
+		["*"] = os.getenv("WIN32YANK") .. " -i --crlf",
+	},
+	paste = {
+		["+"] = os.getenv("WIN32YANK") .. " -o --lf",
+		["*"] = os.getenv("WIN32YANK") .. " -o --lf",
+	},
+	cache_enabled = true,
 }
 
 -- Sync system clipboard with Neovim
 vim.schedule(function()
-    vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Indentation visual aid for wrapped lines
@@ -80,4 +79,3 @@ vim.opt.termguicolors = true
 
 -- Prompt to save on quit if changes are unsaved
 vim.opt.confirm = true
-
