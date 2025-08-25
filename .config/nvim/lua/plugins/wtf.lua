@@ -4,7 +4,18 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 	},
-	opts = {},
+	opts = {
+		popup_type = "popup",
+		provider = "gemini",
+		providers = {
+			gemini = {
+				api_key = function()
+					return os.getenv("GEMINI_API_KEY")
+				end,
+				model_id = "gemini-2.0-flash",
+			},
+		},
+	},
 	keys = {
 		{
 			"<leader>wd",
