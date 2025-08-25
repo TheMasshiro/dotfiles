@@ -18,15 +18,16 @@ vim.opt.mouse = "a"
 vim.opt.showmode = false
 
 -- Use win32yank for wsl
+local win32yank = os.getenv("WIN32YANK")
 vim.g.clipboard = {
 	name = "win32yank-wsl",
 	copy = {
-		["+"] = os.getenv("WIN32YANK") .. " -i --crlf",
-		["*"] = os.getenv("WIN32YANK") .. " -i --crlf",
+		["+"] = win32yank .. " -i --crlf",
+		["*"] = win32yank .. " -i --crlf",
 	},
 	paste = {
-		["+"] = os.getenv("WIN32YANK") .. " -o --lf",
-		["*"] = os.getenv("WIN32YANK") .. " -o --lf",
+		["+"] = win32yank .. " -o --lf",
+		["*"] = win32yank .. " -o --lf",
 	},
 	cache_enabled = true,
 }
