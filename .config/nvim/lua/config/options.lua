@@ -17,21 +17,6 @@ vim.opt.mouse = "a"
 -- Don't show current mode (handled by statusline)
 vim.opt.showmode = false
 
--- Use win32yank for wsl
-local win32yank = os.getenv("WIN32YANK")
-vim.g.clipboard = {
-	name = "win32yank-wsl",
-	copy = {
-		["+"] = win32yank .. " -i --crlf",
-		["*"] = win32yank .. " -i --crlf",
-	},
-	paste = {
-		["+"] = win32yank .. " -o --lf",
-		["*"] = win32yank .. " -o --lf",
-	},
-	cache_enabled = true,
-}
-
 -- Sync system clipboard with Neovim
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
