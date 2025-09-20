@@ -1,7 +1,5 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
-	cmd = { mason_path .. "emmet-language-server", "--stdio" },
+	cmd = { "emmet-language-server", "--stdio" },
 	filetypes = {
 		"css",
 		"eruby",

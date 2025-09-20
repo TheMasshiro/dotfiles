@@ -1,7 +1,5 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
-	cmd = { mason_path .. "typescript-language-server", "--stdio" },
+	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = {
 		"javascript",
 		"javascriptreact",

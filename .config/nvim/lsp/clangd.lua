@@ -1,8 +1,6 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
 	cmd = {
-		mason_path .. "clangd",
+		"clangd",
 		"--background-index",
 		"--fallback-style=llvm",
 	},

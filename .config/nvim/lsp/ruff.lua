@@ -1,7 +1,5 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
-	cmd = { mason_path .. "ruff", "server" },
+	cmd = { "ruff", "server" },
 	filetypes = { "python" },
 	root_markers = { "setup.py", "pyproject.toml", "requirements.txt", ".venv" },
 	init_options = {

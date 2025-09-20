@@ -1,7 +1,5 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
-	cmd = { mason_path .. "lua-language-server" },
+	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	settings = {
 		Lua = {

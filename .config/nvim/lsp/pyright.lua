@@ -1,7 +1,5 @@
-local mason_path = require("config.paths").nvim.mason
-
 return {
-	cmd = { mason_path .. "pyright-langserver", "--stdio" },
+	cmd = { "pyright-langserver", "--stdio" },
 	filetypes = { "python" },
 	root_markers = { "setup.py", "pyproject.toml", "requirements.txt", ".venv" },
 	settings = {
