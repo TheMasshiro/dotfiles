@@ -10,6 +10,9 @@ return function()
 			{ mode = "n", keys = "]" },
 			{ mode = "x", keys = "[" },
 			{ mode = "x", keys = "]" },
+
+			{ mode = "n", keys = "\\" },
+			{ mode = "x", keys = "\\" },
 		},
 
 		clues = {
