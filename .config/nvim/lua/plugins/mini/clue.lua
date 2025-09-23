@@ -5,6 +5,11 @@ return function()
 		triggers = {
 			{ mode = "n", keys = "<Leader>" },
 			{ mode = "x", keys = "<Leader>" },
+
+			{ mode = "n", keys = "[" },
+			{ mode = "n", keys = "]" },
+			{ mode = "x", keys = "[" },
+			{ mode = "x", keys = "]" },
 		},
 
 		clues = {
