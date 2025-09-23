@@ -11,6 +11,7 @@ return {
 	config = function()
 		require("plugins.mini.ai")()
 		require("plugins.mini.bracketed")()
+		require("plugins.mini.clue")()
 		require("plugins.mini.cursorword")()
 		require("plugins.mini.files")()
 		require("plugins.mini.git")()
