@@ -1,7 +1,7 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Exit Inset Mode
+-- Exit Insert Mode
 -- ThePrimeagen
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
@@ -20,4 +20,3 @@ vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename, { desc = "LSP Rename Symbo
 
 -- Close current buffer
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { silent = true, desc = "Close Current Buffer" })
-
