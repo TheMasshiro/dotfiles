@@ -47,13 +47,6 @@ return {
 			desc = "Toggle Terminal",
 		},
 		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
-		},
-		{
 			"]]",
 			function()
 				Snacks.words.jump(vim.v.count1)
