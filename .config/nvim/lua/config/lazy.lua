@@ -31,7 +31,7 @@ require("lazy").setup({
 		{ import = "plugins.utils" },
 		{ import = "plugins.snacks" },
 	},
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "rose-pine" } },
 	checker = {
 		enabled = true,
 		notify = false,
