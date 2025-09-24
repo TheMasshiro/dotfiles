@@ -26,7 +26,6 @@ return {
 			"json",
 			"jsonc",
 			"json5",
-			"jsx",
 			"lua",
 			"luadoc",
 			"luap",
