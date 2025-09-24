@@ -19,6 +19,9 @@ return function()
 
 			{ mode = "n", keys = "\\" },
 			{ mode = "x", keys = "\\" },
+
+			{ mode = "x", keys = "a" },
+			{ mode = "o", keys = "a" },
 		},
 
 		clues = {
