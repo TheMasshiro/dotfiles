@@ -22,6 +22,9 @@ return function()
 
 			{ mode = "x", keys = "a" },
 			{ mode = "o", keys = "a" },
+
+			{ mode = "x", keys = "i" },
+			{ mode = "o", keys = "i" },
 		},
 
 		clues = {
