@@ -6,9 +6,15 @@ return function()
 			{ mode = "n", keys = "<Leader>" },
 			{ mode = "x", keys = "<Leader>" },
 
+			{ mode = "n", keys = "g" },
+			{ mode = "x", keys = "g" },
+
+			{ mode = "n", keys = "s" },
+			{ mode = "x", keys = "s" },
+
 			{ mode = "n", keys = "[" },
-			{ mode = "n", keys = "]" },
 			{ mode = "x", keys = "[" },
+			{ mode = "n", keys = "]" },
 			{ mode = "x", keys = "]" },
 
 			{ mode = "n", keys = "\\" },
@@ -28,8 +34,9 @@ return function()
 			{ mode = "n", keys = "<Leader>g", desc = "+Git" },
 			{ mode = "n", keys = "<Leader>h", desc = "+Git Hunks" },
 			{ mode = "n", keys = "<Leader>l", desc = "+LSP" },
-			{ mode = "n", keys = "<Leader>z", desc = "+Scratch/Zen" },
 			{ mode = "n", keys = "<Leader>s", desc = "+Search" },
+			{ mode = "n", keys = "<Leader>w", desc = "+Diagnostics" },
+			{ mode = "n", keys = "<Leader>z", desc = "+Scratch/Zen" },
 			{ mode = "n", keys = "\\n", desc = "+Notifications" },
 			{ mode = "n", keys = "\\b", desc = "+Buffers" },
 		},
