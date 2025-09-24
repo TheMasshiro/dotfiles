@@ -14,6 +14,7 @@ return {
 	},
 	config = function()
 		require("plugins.mini.ai")()
+		require("plugins.mini.align")()
 		require("plugins.mini.bracketed")()
 		require("plugins.mini.clue")()
 		require("plugins.mini.cursorword")()
