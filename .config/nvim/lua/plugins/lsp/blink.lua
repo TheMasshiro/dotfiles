@@ -37,9 +37,13 @@ return {
 		completion = {
 			menu = {
 				border = "rounded",
-				winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 			},
 			documentation = { auto_show = true, window = { border = "rounded" } },
+		},
+
+		cmdline = {
+			keymap = { preset = "inherit" },
+			completion = { menu = { auto_show = true } },
 		},
 
 		-- Default list of enabled providers defined so that you can extend it
