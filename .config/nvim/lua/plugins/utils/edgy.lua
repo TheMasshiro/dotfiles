@@ -1,5 +1,6 @@
 return {
 	"folke/edgy.nvim",
+	event = "VeryLazy",
 	---@module 'edgy'
 	---@param opts Edgy.Config
 	opts = function(_, opts)
