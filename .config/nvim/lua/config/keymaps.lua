@@ -20,3 +20,8 @@ vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename, { desc = "LSP Rename Symbo
 
 -- Close current buffer
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { silent = true, desc = "Close Current Buffer" })
+
+-- Create vertical windows
+vim.keymap.set("n", "\\v", "<CMD>vnew<CR>", { silent = true, desc = "Vertical split" })
+vim.keymap.set("n", "<A-l>", "<CMD>vertical resize +5<CR>", { silent = true, desc = "Increase split width" })
+vim.keymap.set("n", "<A-h>", "<CMD>vertical resize -5<CR>", { silent = true, desc = "Decrease split width" })
