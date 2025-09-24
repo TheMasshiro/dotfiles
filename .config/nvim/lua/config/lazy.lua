@@ -30,6 +30,7 @@ require("lazy").setup({
 		{ import = "plugins.lsp" },
 		{ import = "plugins.utils" },
 		{ import = "plugins.snacks" },
+		{ import = "plugins.treesitter" },
 	},
 	install = { colorscheme = { "rose-pine" } },
 	checker = {
