@@ -84,6 +84,8 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # Aliases
 alias cheat="~/bin/chtfzf.sh"
 alias ls="eza --icons=always"
+alias lg="lazygit"
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
