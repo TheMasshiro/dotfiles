@@ -37,7 +37,7 @@ return {
 				"black",
 				"djlint", -- For web
 				"isort",
-				"pyright",
+				"basedpyright",
 				"ruff",
 
 				-- Web Things

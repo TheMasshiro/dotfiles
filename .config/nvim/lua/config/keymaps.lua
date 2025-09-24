@@ -17,6 +17,10 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { desc = "Code Action" })
 -- Rename Symbol
 vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
+-- Toggle Inlay Hints
+vim.keymap.set("n", "\\bh", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
 
 -- Close current buffer
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { silent = true, desc = "Close Current Buffer" })

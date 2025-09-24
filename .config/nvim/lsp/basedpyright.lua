@@ -1,12 +1,18 @@
 return {
-	cmd = { "pyright-langserver", "--stdio" },
+	cmd = { "basedpyright-langserver", "--stdio" },
 	filetypes = { "python" },
 	root_markers = { "setup.py", "pyproject.toml", "requirements.txt", ".venv" },
 	settings = {
-		python = {
+		basedpyright = {
 			analysis = {
-				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
+				autoSearchPath = true,
+				typeCheckingMode = "basic",
+				diagnosticMode = "workspace",
+
+				inlayHints = {
+					callArgumentNames = true,
+				},
 			},
 		},
 	},
