@@ -4,6 +4,7 @@
         "missing-fields",
         "unused-function",
         "undefined-doc-name",
-        "duplicate-set-field"
+        "duplicate-set-field",
+        "undefined-field"
     ]
 }
