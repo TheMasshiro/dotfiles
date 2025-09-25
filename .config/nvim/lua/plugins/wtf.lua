@@ -18,7 +18,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>wd",
+			"<leader>xd",
 			mode = { "n", "x" },
 			function()
 				require("wtf").diagnose()
@@ -26,36 +26,28 @@ return {
 			desc = "Debug diagnostic with AI",
 		},
 		{
-			"<leader>wf",
+			"<leader>xf",
 			mode = { "n", "x" },
 			function()
 				require("wtf").fix()
 			end,
-			desc = "Fix diagnostic with AI",
+			desc = "Fix diagnostic (AI)",
 		},
 		{
 			mode = { "n" },
-			"<leader>ws",
+			"<leader>xs",
 			function()
 				require("wtf").search()
 			end,
-			desc = "Search diagnostic with Google",
+			desc = "Search diagnostic (Online)",
 		},
 		{
 			mode = { "n" },
-			"<leader>wp",
-			function()
-				require("wtf").pick_provider()
-			end,
-			desc = "Pick provider",
-		},
-		{
-			mode = { "n" },
-			"<leader>wh",
+			"<leader>xh",
 			function()
 				require("wtf").history()
 			end,
-			desc = "Populate the quickfix list with previous chat history",
+			desc = "AI Chat History",
 		},
 	},
 }

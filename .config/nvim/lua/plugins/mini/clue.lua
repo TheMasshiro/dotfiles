@@ -41,7 +41,7 @@ return function()
 			{ mode = "n", keys = "<Leader>h", desc = "+Git Hunks" },
 			{ mode = "n", keys = "<Leader>l", desc = "+LSP" },
 			{ mode = "n", keys = "<Leader>s", desc = "+Search" },
-			{ mode = "n", keys = "<Leader>w", desc = "+Diagnostics" },
+			{ mode = "n", keys = "<Leader>x", desc = "+Diagnostics" },
 			{ mode = "n", keys = "<Leader>z", desc = "+Scratch/Zen" },
 			{ mode = "n", keys = "\\n", desc = "+Notifications" },
 			{ mode = "n", keys = "\\b", desc = "+Buffers" },
