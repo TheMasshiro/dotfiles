@@ -47,6 +47,9 @@ return {
 				"html-lsp",
 				"prettierd",
 				"typescript-language-server",
+
+				-- Java
+				"jdtls",
 			}
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 		end,
