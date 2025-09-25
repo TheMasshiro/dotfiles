@@ -14,12 +14,12 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({
+	"basedpyright",
 	"clangd",
 	"css",
 	"emmet",
 	"html",
 	"luals",
-	"pyright",
 	"ruff",
 	"tsls",
 })
