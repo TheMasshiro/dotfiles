@@ -19,6 +19,7 @@ vim.lsp.enable({
 	"css",
 	"emmet",
 	"html",
+	"intelephense",
 	"luals",
 	"ruff",
 	"tsls",

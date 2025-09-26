@@ -23,6 +23,12 @@ M.formatters = {
 	},
 	["php-cs-fixer"] = {
 		command = "php-cs-fixer",
+		args = {
+			"fix",
+			"$FILENAME",
+			"--config=" .. os.getenv("HOME") .. "/.php-cs-fixer.dist.php",
+		},
+		stdin = false,
 	},
 	djlint = {
 		command = "djlint",
