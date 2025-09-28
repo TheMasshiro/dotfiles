@@ -11,7 +11,7 @@ local snacks_opts = {
 }
 
 local snacks_init = function()
-	vim.g.snacks_animate = false
+	-- vim.g.snacks_animate = false
 
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "VeryLazy",
