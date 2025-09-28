@@ -30,5 +30,6 @@ vim.diagnostic.config({
 	underline = true,
 	update_in_insert = false,
 	virtual_text = true,
+	signs = true,
 	virtual_lines = { current_line = true },
 })
