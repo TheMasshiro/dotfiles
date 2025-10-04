@@ -35,6 +35,7 @@ return function()
 			mini_clue.gen_clues.windows(),
 			mini_clue.gen_clues.z(),
 
+			{ mode = "n", keys = "<Leader>a", desc = "+Sidekick (AI)" },
 			{ mode = "n", keys = "<Leader>b", desc = "+Bufferline" },
 			{ mode = "n", keys = "<Leader>f", desc = "+File/Find" },
 			{ mode = "n", keys = "<Leader>g", desc = "+Git" },
@@ -45,6 +46,7 @@ return function()
 			{ mode = "n", keys = "<Leader>z", desc = "+Scratch/Zen" },
 			{ mode = "n", keys = "\\n", desc = "+Notifications" },
 			{ mode = "n", keys = "\\b", desc = "+Buffers" },
+			{ mode = "n", keys = "\\v", desc = "+Verticals" },
 		},
 
 		window = {
