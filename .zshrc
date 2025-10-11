@@ -83,6 +83,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
 alias cheat="~/bin/chtfzf.sh"
+alias update_all="~/bin/autoupdate.sh"
 alias ls="eza --icons=always"
 alias lg="lazygit"
 
