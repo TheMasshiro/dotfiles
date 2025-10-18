@@ -1,9 +1,13 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"sainnhe/everforest",
+	name = "everforest",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		require("rose-pine").setup()
-		vim.cmd.colorscheme("rose-pine-main")
+		vim.g.everforest_enable_italic = true
+		vim.g.everforest_background = "hard"
+		vim.g.everforest_better_performance = 1
+
+		vim.cmd.colorscheme("everforest")
 	end,
 }
