@@ -1,13 +1,21 @@
 return {
-	"sainnhe/everforest",
-	name = "everforest",
+	"catppuccin/nvim",
+	name = "catppuccin",
 	lazy = false,
 	priority = 1000,
-	config = function()
-		vim.g.everforest_enable_italic = true
-		vim.g.everforest_background = "hard"
-		vim.g.everforest_better_performance = 1
 
-		vim.cmd.colorscheme("everforest")
+	config = function()
+		require("catppuccin").setup({
+			flavour = "mocha",
+
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+
+				percentage = 0.10,
+			},
+		})
+
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }
