@@ -21,3 +21,5 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+\.wezterm.lua # remove to use wezterm config
