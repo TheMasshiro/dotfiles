@@ -7,6 +7,7 @@ return {
 	config = function()
 		require("catppuccin").setup({
 			flavour = "mocha",
+			no_italic = _G.is_within_termux(),
 
 			dim_inactive = {
 				enabled = true,
