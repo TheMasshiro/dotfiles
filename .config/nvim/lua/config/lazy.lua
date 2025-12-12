@@ -32,7 +32,7 @@ require("lazy").setup({
 		{ import = "plugins.snacks" },
 		{ import = "plugins.treesitter" },
 	},
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "tokyonight" } },
 	checker = {
 		enabled = true,
 		notify = false,
