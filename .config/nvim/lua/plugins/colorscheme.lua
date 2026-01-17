@@ -9,7 +9,6 @@ return {
 			flavour = "mocha",
 			no_italic = _G.is_within_termux(),
 
-			transparent_background = true,
 			dim_inactive = {
 				enabled = true,
 				shade = "dark",
