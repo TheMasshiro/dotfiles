@@ -9,6 +9,14 @@ if not status then
 end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 
+local bundles = {
+	vim.fn.glob(
+		home
+			.. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
+		1
+	),
+}
+
 local config = {
 	cmd = {
 		"java",
@@ -58,7 +66,7 @@ local config = {
 	},
 
 	init_options = {
-		bundles = {},
+		bundles = bundles,
 	},
 }
 require("jdtls").start_or_attach(config)
