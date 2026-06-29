@@ -29,7 +29,7 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 		{ import = "plugins.debugger" },
-		{ import = "plugins.languages" },
+		{ import = "plugins.java" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.mini" },
 		{ import = "plugins.ui" },
