@@ -6,5 +6,9 @@
         "undefined-doc-name",
         "duplicate-set-field",
         "undefined-field"
+    ],
+    "diagnostics.globals": [
+        "vim",
+        "MiniIcons"
     ]
 }
