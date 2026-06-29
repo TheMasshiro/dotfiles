@@ -1,111 +1,65 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        //"source": "~/.config/fastfetch/nixos.png",
-        "type": "small",
-        "height": 15,
-        "width": 30,
-        "padding": {
-            "top": 1
-        }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "type": "small",
+    "height": 25,
+    "width": 40,
+    "padding": {
+      "top": 1
+    }
+  },
+
+  "display": {
+    "separator": " "
+  },
+
+  "modules": [
+    "break",
+
+    {
+      "type": "title",
+      "color": {
+        "user": "#F5C2E7",
+        "at": "#CDD6F4",
+        "host": "#89DCEB"
+      }
     },
-    "display": {
-        "separator": " ➜  "
+
+    "break",
+
+    {
+      "type": "os",
+      "key": "",
+      "keyColor": "#89DCEB"
     },
-    "modules": [
-        "break",
-        {
-            "type": "os",
-            "key": " DISTRO",
-            "keyColor": "31",
-        },
-        {
-            "type": "kernel",
-            "key": " ├  ",
-            "keyColor": "31",
-        },
-        {
-            "type": "packages",
-            "key": " ├ 󰏖 ",
-            "keyColor": "31",
-        },
-        {
-            "type": "shell",
-            "key": " └  ",
-            "keyColor": "31",
-        },
-        "break",
-        {
-            "type": "wm",
-            "key": " DE/WM",
-            "keyColor": "32",
-        },
-        {
-            "type": "wmtheme",
-            "key": " ├ 󰉼 ",
-            "keyColor": "32",
-        },
-        {
-            "type": "icons",
-            "key": " ├ 󰀻 ",
-            "keyColor": "32",
-        },
-        {
-            "type": "cursor",
-            "key": " ├  ",
-            "keyColor": "32",
-        },
-        {
-            "type": "terminal",
-            "key": " ├  ",
-            "keyColor": "32",
-        },
-        {
-            "type": "terminalfont",
-            "key": " └  ",
-            "keyColor": "32",
-        },
-        "break",
-        {
-            "type": "host",
-            "format": "{2}",
-            "key": "󰌢 SYSTEM",
-            "keyColor": "33",
-        },
-        {
-            "type": "cpu",
-            "format": "{1} ({3}) @ {7}",
-            "key": " ├  ",
-            "keyColor": "33",
-        },
-        {
-            "type": "gpu",
-            "format": "{2}",
-            "key": " ├ 󰢮 ",
-            "keyColor": "33",
-        },
-        {
-            "type": "memory",
-            "key": " ├  ",
-            "keyColor": "33",
-        },
-        {
-            "type": "swap",
-            "key": " ├ 󰓡 ",
-            "keyColor": "33",
-        },
-        {
-            "type": "disk",
-            "key": " ├ 󰋊 ",
-            "keyColor": "33",
-        },
-        {
-            "type": "display",
-            "key": " └  ",
-            "compactType": "original-with-refresh-rate",
-            "keyColor": "33",
-        },
-        "break",
-        "break",
-    ]
+    {
+      "type": "cpu",
+      "key": "",
+      "keyColor": "#CBA6F7"
+    },
+    {
+      "type": "board",
+      "key": "󰚗",
+      "keyColor": "#FAB387"
+    },
+    {
+      "type": "memory",
+      "key": "",
+      "keyColor": "#A6E3A1",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "key": "",
+      "keyColor": "#94E2D5"
+    },
+
+    "break",
+
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
 }
