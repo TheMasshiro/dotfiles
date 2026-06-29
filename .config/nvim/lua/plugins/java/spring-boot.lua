@@ -1,6 +1,11 @@
 return {
 	"elmcgill/springboot-nvim",
 	ft = "java",
+	cond = function()
+		return vim.fn.glob("pom.xml") ~= ""
+			or vim.fn.glob("build.gradle") ~= ""
+			or vim.fn.glob("build.gradle.kts") ~= ""
+	end,
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"mfussenegger/nvim-jdtls",
@@ -8,9 +13,7 @@ return {
 	config = function()
 		local springboot_nvim = require("springboot-nvim")
 		local wk = require("which-key")
-
 		springboot_nvim.setup({})
-
 		wk.add({
 			{ "<leader>J", group = "Spring Boot", buffer = 0, icon = "🍃" },
 			{ "<leader>Jr", springboot_nvim.boot_run, desc = "Run Project", buffer = 0 },
