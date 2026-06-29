@@ -4,8 +4,6 @@ return {
 	-- [[ mini.nvim ]]
 	--  A collection of various small independent plugins/modules
 	"nvim-mini/mini.nvim",
-	lazy = false,
-	event = "VeryLazy",
 	keys = {
 		{
 			"\\f",
