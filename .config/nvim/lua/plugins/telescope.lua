@@ -26,7 +26,7 @@ return {
 	-- do as well as how to actually do it!
 	"nvim-telescope/telescope.nvim",
 	enabled = true,
-	cmd = { "Telescope" },
+	event = "VimEnter",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		-- optional but recommended
