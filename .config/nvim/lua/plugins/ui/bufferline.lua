@@ -5,7 +5,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
-	---@module 'buggerline'
+	---@module 'bufferline'
 	---@type bufferline.Config
 	opts = {
 		options = {
