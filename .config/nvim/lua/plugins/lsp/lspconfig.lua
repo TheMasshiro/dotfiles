@@ -14,7 +14,17 @@ return {
 			---@module 'mason.settings'
 			---@type MasonSettings
 			---@diagnostic disable-next-line: missing-fields
-			opts = {},
+			opts = {
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+					width = 0.9,
+					border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+				},
+			},
 		},
 		-- Maps LSP server names between nvim-lspconfig and Mason package names.
 		"mason-org/mason-lspconfig.nvim",
@@ -187,6 +197,37 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			-- You can add other tools here that you want Mason to install
+
+			-- C/C++
+			"clangd",
+			"clang-format",
+			"cpplint",
+
+			-- Go
+			"delve",
+
+			-- Java
+			"jdtls",
+			"java-debug-adapter",
+
+			-- Lua
+			"lua-language-server",
+			"stylua",
+
+			-- Python
+			"black",
+			"djlint", -- For web
+			"isort",
+			"basedpyright",
+			"ruff",
+
+			-- Web Things
+			"css-lsp",
+			"emmet-language-server",
+			"eslint_d",
+			"html-lsp",
+			"prettierd",
+			"typescript-language-server",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

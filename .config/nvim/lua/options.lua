@@ -30,6 +30,10 @@ vim.o.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
+-- Split window behavior tweaks
+vim.opt.splitkeep = "screen" -- preserve scroll context when splitting
+vim.opt.laststatus = 0 -- global statusline
+
 -- Use win32yank for wsl
 local win32yank = os.getenv("WIN32YANK")
 vim.g.clipboard = {
