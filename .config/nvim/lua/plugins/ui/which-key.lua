@@ -20,7 +20,8 @@ return {
 			-- Document existing key chains
 			spec = {
 				{ "<leader>b", group = "Buffer" },
-				{ "<leader>h", group = "Git Hunk", mode = { "n", "v" } }, -- Enable gitsigns recommended keymaps first
+				{ "<leader>g", group = "Git Hunk", mode = { "n", "v" } },
+				{ "<leader>h", group = "Harpoon", icon = "󰛢" },
 				{ "<leader>hl", group = "Lazy", mode = { "n", "v" } },
 				{ "<leader>f", group = "Find", mode = { "n", "v" } },
 				{ "<leader>t", group = "Toggle" },
