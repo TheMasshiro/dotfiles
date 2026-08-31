@@ -2,6 +2,5 @@ theme = Catppuccin Mocha
 font-family = "JetBrains Mono NL"
 command=zsh -lc '~/scripts/ghostty-zellij.sh'
 window-decoration = none
-maximize = true
 
 shell-integration-features = no-cursor, no-sudo, title
