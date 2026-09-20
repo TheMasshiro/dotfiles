@@ -1,3 +1,7 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -12,25 +16,25 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Diagnostic Config & Keymaps
 --  See `:help vim.diagnostic.Opts`
 vim.diagnostic.config({
-	update_in_insert = false,
-	severity_sort = true,
-	float = { border = "rounded", source = "if_many" },
-	underline = { severity = { min = vim.diagnostic.severity.WARN } },
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = "rounded", source = "if_many" },
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
-	-- Can switch between these as you prefer
-	virtual_text = true, -- Text shows up at the end of the line
-	virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+  -- Can switch between these as you prefer
+  virtual_text = true, -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
-	-- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
-	jump = {
-		on_jump = function(_, bufnr)
-			vim.diagnostic.open_float({
-				bufnr = bufnr,
-				scope = "cursor",
-				focus = false,
-			})
-		end,
-	},
+  -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+  jump = {
+    on_jump = function(_, bufnr)
+      vim.diagnostic.open_float({
+        bufnr = bufnr,
+        scope = "cursor",
+        focus = false,
+      })
+    end,
+  },
 })
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -75,11 +79,11 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selec
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
 })
 
 -- Close current buffer
