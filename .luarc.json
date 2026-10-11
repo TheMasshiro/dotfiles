@@ -1,5 +1,6 @@
 {
     "diagnostics.globals": [
-        "MiniIcons"
+        "MiniIcons",
+        "vim"
     ]
 }
