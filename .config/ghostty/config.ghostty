@@ -1,5 +1,6 @@
 theme = Catppuccin Mocha
 font-family = "JetBrains Mono NL"
 window-decoration = none
+command = tmux new-session -A -s main
 
 shell-integration-features = no-cursor, no-sudo, title
