@@ -87,7 +87,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
 alias ls="eza --icons=always"
-alias cat="batcat"
+alias cat="bat"
 alias vi="nvim"
 alias vim="nvim"
 alias cheat="~/bin/chtfzf.sh"
