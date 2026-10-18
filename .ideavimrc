@@ -16,7 +16,56 @@ set surround              " mini.surround
 set sneak                 " flash.nvim s/S (2-char jump)
 set multiple-cursors      " multicursor.nvim
 set mini-ai               " mini.ai text objects (needs IdeaVim 2.24+)
-" set which-key           " needs the Which-Key plugin from the marketplace
+set commentary            " nvim built-in gc/gcc
+set NERDTree              " vim keys in the project tree (IdeaVim only runs in editors otherwise)
+set which-key             " needs the Which-Key plugin from the marketplace
+set notimeout             " keep the which-key popup open instead of closing after timeoutlen
+
+" which-key groups (same as nvim which-key spec)
+let g:WhichKeyDesc_buffer = "<leader>b +Buffer"
+let g:WhichKeyDesc_multicursor = "<leader>c +Multicursor"
+let g:WhichKeyDesc_git = "<leader>g +Git Hunk"
+let g:WhichKeyDesc_git_lazy = "<leader>gl +Lazy"
+let g:WhichKeyDesc_find = "<leader>f +Find"
+let g:WhichKeyDesc_toggle = "<leader>t +Toggle"
+let g:WhichKeyDesc_trouble = "<leader>x +Trouble"
+let g:WhichKeyDesc_lsp = "gr +LSP Actions"
+
+" which-key descriptions (nvim desc strings)
+let g:WhichKeyDesc_search_buffer = "<leader>/ [/] Fuzzily search in current buffer"
+let g:WhichKeyDesc_quickfix = "<leader>q Open diagnostic [Q]uickfix list"
+let g:WhichKeyDesc_buffer_delete = "<leader>bd [D]estroy Buffer"
+let g:WhichKeyDesc_buffer_format = "<leader>bf [F]ormat buffer"
+let g:WhichKeyDesc_mc_below = "<leader>cj Add cursor below"
+let g:WhichKeyDesc_mc_above = "<leader>ck Add cursor above"
+let g:WhichKeyDesc_mc_next = "<leader>cn Add cursor at next match"
+let g:WhichKeyDesc_mc_skip = "<leader>cs Skip next match"
+let g:WhichKeyDesc_mc_delete = "<leader>cx Delete cursor"
+let g:WhichKeyDesc_find_files = "<leader>ff [F]ind [F]iles"
+let g:WhichKeyDesc_find_grep = "<leader>fg [F]ind by [G]rep"
+let g:WhichKeyDesc_find_word = "<leader>fw [F]ind current [W]ord"
+let g:WhichKeyDesc_find_open = "<leader>f/ [F]ind [/] in Open Files"
+let g:WhichKeyDesc_find_commands = "<leader>fc [F]ind [C]ommands"
+let g:WhichKeyDesc_find_select = "<leader>fs [F]ind [S]elect Action"
+let g:WhichKeyDesc_find_diagnostics = "<leader>fd [F]ind [D]iagnostics"
+let g:WhichKeyDesc_find_recent = "<leader>f. [F]ind Recent Files"
+let g:WhichKeyDesc_git_preview = "<leader>gp git [p]review hunk"
+let g:WhichKeyDesc_git_reset = "<leader>gr git [r]eset hunk"
+let g:WhichKeyDesc_git_stage_buffer = "<leader>gS git [S]tage buffer"
+let g:WhichKeyDesc_git_blame = "<leader>gb git [b]lame line"
+let g:WhichKeyDesc_git_diff = "<leader>gd git [d]iff against index"
+let g:WhichKeyDesc_git_lazygit = "<leader>glg LazyGit"
+let g:WhichKeyDesc_toggle_hints = "<leader>th [T]oggle Inlay [H]ints"
+let g:WhichKeyDesc_toggle_blame = "<leader>tb [T]oggle git show [b]lame line"
+let g:WhichKeyDesc_trouble_diag = "<leader>xx Diagnostics (Trouble)"
+let g:WhichKeyDesc_trouble_symbols = "<leader>xs Symbols (Trouble)"
+let g:WhichKeyDesc_lsp_rename = "grn [R]e[n]ame"
+let g:WhichKeyDesc_lsp_action = "gra [G]oto Code [A]ction"
+let g:WhichKeyDesc_lsp_declaration = "grD [G]oto [D]eclaration"
+let g:WhichKeyDesc_lsp_definition = "grd [G]oto [D]efinition"
+let g:WhichKeyDesc_lsp_references = "grr [G]oto [R]eferences"
+let g:WhichKeyDesc_lsp_implementation = "gri [G]oto [I]mplementation"
+let g:WhichKeyDesc_lsp_type = "grt [G]oto [T]ype Definition"
 
 " Let Vim own these keys instead of the IDE
 sethandler <C-c> n-v:ide i:vim
@@ -28,6 +77,7 @@ sethandler <C-l> n:vim i:ide
 " ---- Basic keymaps ----
 nnoremap <Esc> :nohlsearch<CR>
 inoremap <C-c> <Esc>
+nnoremap Y y$
 
 " Split navigation (also covers vim-tmux-navigator inside the IDE)
 nnoremap <C-h> <C-w>h
@@ -39,9 +89,14 @@ nnoremap <C-l> <C-w>l
 vmap J <Action>(MoveLineDown)
 vmap K <Action>(MoveLineUp)
 
+" Diagnostics (nvim built-in [d ]d)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
 nmap <leader>q <Action>(ActivateProblemsViewToolWindow)
 
 " ---- Buffer ----
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
 nmap <leader>bd <Action>(CloseContent)
 nmap <leader>bf <Action>(ReformatCode)
 

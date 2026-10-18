@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "sortGroupsFirst": false
+  },
+  "overrides": {
+    " ": { "description": "[ ] Find existing buffers", "icon": "search" }
+  }
+}
