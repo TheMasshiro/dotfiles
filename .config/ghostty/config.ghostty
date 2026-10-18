@@ -1,6 +1,8 @@
-theme = Catppuccin Mocha
+font-size = 13
 font-family = "JetBrains Mono NL"
-window-decoration = none
 command = tmux new-session -A -s main
+theme = Catppuccin Mocha
+mouse-hide-while-typing = true
+window-decoration = none
 
 shell-integration-features = no-cursor, no-sudo, title
