@@ -1,0 +1,108 @@
+" Ported from ~/.config/nvim (options.lua, keymaps.lua, plugins/*)
+let mapleader = " "
+
+" ---- Options ----
+set number relativenumber
+set scrolloff=10
+set ignorecase smartcase
+set incsearch hlsearch
+set clipboard+=unnamedplus
+set timeoutlen=300
+set guicursor=a:block
+
+" ---- Built-in IdeaVim extensions (stand-ins for nvim plugins) ----
+set highlightedyank       " TextYankPost highlight
+set surround              " mini.surround
+set sneak                 " flash.nvim s/S (2-char jump)
+set multiple-cursors      " multicursor.nvim
+set mini-ai               " mini.ai text objects (needs IdeaVim 2.24+)
+" set which-key           " needs the Which-Key plugin from the marketplace
+
+" Let Vim own these keys instead of the IDE
+sethandler <C-c> n-v:ide i:vim
+sethandler <C-h> n:vim i:ide
+sethandler <C-j> n:vim i:ide
+sethandler <C-k> n:vim i:ide
+sethandler <C-l> n:vim i:ide
+
+" ---- Basic keymaps ----
+nnoremap <Esc> :nohlsearch<CR>
+inoremap <C-c> <Esc>
+
+" Split navigation (also covers vim-tmux-navigator inside the IDE)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Move selected lines
+vmap J <Action>(MoveLineDown)
+vmap K <Action>(MoveLineUp)
+
+nmap <leader>q <Action>(ActivateProblemsViewToolWindow)
+
+" ---- Buffer ----
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bf <Action>(ReformatCode)
+
+" ---- LSP (gr*) ----
+nmap grn <Action>(RenameElement)
+nmap gra <Action>(ShowIntentionActions)
+vmap gra <Action>(ShowIntentionActions)
+nmap grD <Action>(GotoDeclaration)
+nmap grd <Action>(GotoDeclaration)
+nmap grr <Action>(FindUsages)
+nmap gri <Action>(GotoImplementation)
+nmap grt <Action>(GotoTypeDeclaration)
+nmap gO <Action>(FileStructurePopup)
+nmap gW <Action>(GotoSymbol)
+nmap <leader>th <Action>(ToggleInlayHintsGloballyAction)
+
+" ---- Find (telescope) ----
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+nmap <leader>fw <Action>(FindInPath)
+vmap <leader>fw <Action>(FindInPath)
+nmap <leader>f/ <Action>(FindInPath)
+nmap <leader>fc <Action>(GotoAction)
+nmap <leader>fs <Action>(GotoAction)
+nmap <leader>fd <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>f. <Action>(RecentFiles)
+nmap <leader><leader> <Action>(Switcher)
+nmap <leader>/ <Action>(Find)
+
+" ---- Git (gitsigns / lazygit) ----
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap <leader>gp <Action>(VcsShowCurrentChangeMarker)
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+vmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+nmap <leader>gS <Action>(Git.Add)
+nmap <leader>gb <Action>(Annotate)
+nmap <leader>tb <Action>(Annotate)
+nmap <leader>gd <Action>(Compare.SameVersion)
+nmap <leader>glg <Action>(ActivateVersionControlToolWindow)
+
+" ---- Trouble ----
+nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>xs <Action>(ActivateStructureToolWindow)
+
+" ---- File tree (neo-tree / mini.files) ----
+nmap \t <Action>(SelectInProjectView)
+nmap \f <Action>(ActivateProjectToolWindow)
+
+" ---- Surround: mini.surround keys (sa/sd/sr) ----
+nmap sa <Plug>YSurround
+xmap sa <Plug>VSurround
+nmap sd <Plug>DSurround
+nmap sr <Plug>CSurround
+
+" ---- Multicursor ----
+nmap <leader>cj <Action>(EditorCloneCaretBelow)
+nmap <leader>ck <Action>(EditorCloneCaretAbove)
+nmap <leader>cn <Plug>NextWholeOccurrence
+xmap <leader>cn <Plug>NextWholeOccurrence
+nmap <leader>cs <Plug>SkipOccurrence
+xmap <leader>cs <Plug>SkipOccurrence
+nmap <leader>cx <Plug>RemoveOccurrence
+xmap <leader>cx <Plug>RemoveOccurrence
