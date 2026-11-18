@@ -9,8 +9,11 @@
     // Ctrl+h from chat panel -> editor
     { "key": "ctrl+h", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorAreaFocus && !editorFocus && !terminalFocus && !sideBarFocus && !panelFocus && !inQuickOpen" },
 
-    // Leader with no file open
+    // No file open: leader, :q, :e
     { "key": "space", "command": "whichkey.show", "when": "editorAreaFocus && activeEditorGroupEmpty && !inputFocus" },
+    { "key": "shift+; q", "command": "workbench.action.closeWindow", "when": "editorAreaFocus && activeEditorGroupEmpty && !multipleEditorGroups && !inputFocus" },
+    { "key": "shift+; q", "command": "workbench.action.closeGroup", "when": "editorAreaFocus && activeEditorGroupEmpty && multipleEditorGroups && !inputFocus" },
+    { "key": "shift+; e", "command": "workbench.action.quickOpen", "when": "editorAreaFocus && activeEditorGroupEmpty && !inputFocus" },
 
     // Esc closes search (Telescope)
     { "key": "escape", "command": "workbench.action.closeSidebar", "when": "searchViewletFocus" },

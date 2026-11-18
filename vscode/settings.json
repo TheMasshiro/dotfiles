@@ -223,7 +223,7 @@
         }
     ],
     "git.blame.editorDecoration.enabled": false,
-    "claudeCode.preferredLocation": "panel",
+    "claudeCode.preferredLocation": "sidebar",
     "window.menuBarVisibility": "compact",
     "workbench.navigationControl.enabled": false,
     "window.commandCenter": false
