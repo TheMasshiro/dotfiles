@@ -31,12 +31,17 @@
     "editor.linkedEditing": true,
     "files.trimTrailingWhitespace": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.inlayHints.enabled": "offUnlessPressed",
 
     // conform: format on save
     "editor.formatOnSave": false,
     "[lua]": { "editor.formatOnSave": true },
     "[python]": { "editor.formatOnSave": true },
     "[rust]": { "editor.formatOnSave": true },
+
+    // Diagnostics (virtual_text)
+    "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
 
     // No Copilot
     "chat.disableAIFeatures": true,
@@ -137,6 +142,8 @@
         {
             "key": "a", "name": "+AI/Claude Code", "type": "bindings", "bindings": [
                 { "key": "c", "name": "Toggle Claude", "type": "command", "command": "workbench.action.toggleAuxiliaryBar" },
+                { "key": "o", "name": "Open Claude", "type": "command", "command": "claude-vscode.sidebar.open" },
+                { "key": "n", "name": "New conversation", "type": "command", "command": "claude-vscode.newConversation" },
                 { "key": "f", "name": "Focus Claude", "type": "command", "command": "claude-vscode.focus" },
                 { "key": "r", "name": "Resume Claude", "type": "command", "command": "claude-vscode.reopenClosedSession" },
                 { "key": "C", "name": "Continue Claude", "type": "command", "command": "claude-vscode.editor.openLast" },
@@ -149,6 +156,7 @@
         {
             "key": "b", "name": "+Buffer", "type": "bindings", "bindings": [
                 { "key": "d", "name": "Delete buffer", "type": "command", "command": "workbench.action.closeActiveEditor" },
+                { "key": "n", "name": "New file", "type": "command", "command": "explorer.newFile" },
                 { "key": "f", "name": "Format buffer", "type": "command", "command": "editor.action.formatDocument" }
             ]
         },
@@ -215,5 +223,8 @@
         }
     ],
     "git.blame.editorDecoration.enabled": false,
-    "claudeCode.preferredLocation": "panel"
+    "claudeCode.preferredLocation": "panel",
+    "window.menuBarVisibility": "compact",
+    "workbench.navigationControl.enabled": false,
+    "window.commandCenter": false
 }

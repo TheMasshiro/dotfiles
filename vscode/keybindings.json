@@ -7,7 +7,10 @@
     { "key": "ctrl+l", "command": "workbench.action.navigateRight", "when": "(editorTextFocus && vim.mode != 'Insert') || terminalFocus || (!editorTextFocus && !inputFocus)" },
 
     // Ctrl+h from chat panel -> editor
-    { "key": "ctrl+h", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorFocus && !terminalFocus && !sideBarFocus && !panelFocus && !inQuickOpen" },
+    { "key": "ctrl+h", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorAreaFocus && !editorFocus && !terminalFocus && !sideBarFocus && !panelFocus && !inQuickOpen" },
+
+    // Leader with no file open
+    { "key": "space", "command": "whichkey.show", "when": "editorAreaFocus && activeEditorGroupEmpty && !inputFocus" },
 
     // Esc closes search (Telescope)
     { "key": "escape", "command": "workbench.action.closeSidebar", "when": "searchViewletFocus" },
@@ -17,9 +20,10 @@
     { "key": "k", "command": "list.focusUp",                     "when": "filesExplorerFocus && !inputFocus" },
     { "key": "l", "command": "list.select",                      "when": "filesExplorerFocus && !inputFocus" },
     { "key": "h", "command": "list.collapse",                    "when": "filesExplorerFocus && !inputFocus" },
-    { "key": "q", "command": "workbench.action.closeSidebar",    "when": "filesExplorerFocus && !inputFocus" },
-    { "key": "a", "command": "explorer.newFile",                 "when": "filesExplorerFocus && !inputFocus" },
-    { "key": "shift+a", "command": "explorer.newFolder",         "when": "filesExplorerFocus && !inputFocus" },
+    { "key": "h", "command": "runCommands", "args": { "commands": ["list.focusParent", "list.collapse"] }, "when": "filesExplorerFocus && !inputFocus && !treeElementCanCollapse && treeElementHasParent" },
+    { "key": "q", "command": "workbench.action.closeSidebar",    "when": "explorerViewletFocus && !inputFocus" },
+    { "key": "a", "command": "explorer.newFile",                 "when": "explorerViewletFocus && !inputFocus" },
+    { "key": "shift+a", "command": "explorer.newFolder",         "when": "explorerViewletFocus && !inputFocus" },
     { "key": "r", "command": "renameFile",                       "when": "filesExplorerFocus && !inputFocus" },
     { "key": "d", "command": "deleteFile",                       "when": "filesExplorerFocus && !inputFocus" },
     { "key": "y", "command": "filesExplorer.copy",               "when": "filesExplorerFocus && !inputFocus" },
