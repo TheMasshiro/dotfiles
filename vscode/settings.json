@@ -1,0 +1,219 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "window.density.layout": "compact",
+    "claudeCode.hideOnboarding": true,
+
+    // UI
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "explorer.openEditors.visible": 0,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+
+    // Editor (options.lua)
+    "editor.fontFamily": "'JetBrainsMonoNL Nerd Font', monospace",
+    "editor.fontSize": 13,
+    "terminal.integrated.fontFamily": "'JetBrainsMonoNL Nerd Font'",
+    "terminal.integrated.fontSize": 13,
+    "editor.lineNumbers": "relative",
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.renderLineHighlight": "line",
+    "editor.cursorSurroundingLines": 10,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "editor.glyphMargin": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.linkedEditing": true,
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // conform: format on save
+    "editor.formatOnSave": false,
+    "[lua]": { "editor.formatOnSave": true },
+    "[python]": { "editor.formatOnSave": true },
+    "[rust]": { "editor.formatOnSave": true },
+
+    // No Copilot
+    "chat.disableAIFeatures": true,
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.enable": { "*": false },
+    "github.copilot.nextEditSuggestions.enabled": false,
+
+    // Vim
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.timeout": 300,
+    "vim.useCtrlKeys": true,
+    "vim.surround": true,
+    "vim.sneak": true,
+    "vim.targets.enable": true,
+    "vim.inccommand": "replace",
+
+    // blink.cmp: Ctrl+y accepts
+    "editor.acceptSuggestionOnEnter": "off",
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.replace": "block",
+    "vim.cursorStylePerMode.visual": "block",
+    "vim.cursorStylePerMode.visualline": "block",
+    "vim.cursorStylePerMode.visualblock": "block",
+
+    // mini.surround: sa/sd/sr
+    "vim.normalModeKeyBindings": [
+        { "before": ["s", "a"], "after": ["y", "s"] },
+        { "before": ["s", "d"], "after": ["d", "s"] },
+        { "before": ["s", "r"], "after": ["c", "s"] }
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": ["s", "a"], "after": ["S"] }
+    ],
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["<leader>"], "commands": ["whichkey.show"] },
+        { "before": ["<Esc>"], "commands": [":nohl", "removeSecondaryCursors", "closeMarkersNavigation", "closeReferenceSearch", "closeFindWidget", "closeParameterHints", "hideSuggestWidget", "closeQuickDiff"] },
+        { "before": ["Y"], "after": ["y", "$"] },
+
+        // LSP
+        { "before": ["g", "r", "r"], "commands": ["editor.action.goToReferences"] },
+        { "before": ["g", "r", "i"], "commands": ["editor.action.goToImplementation"] },
+        { "before": ["g", "r", "d"], "commands": ["editor.action.revealDefinition"] },
+        { "before": ["g", "r", "t"], "commands": ["editor.action.goToTypeDefinition"] },
+        { "before": ["g", "r", "D"], "commands": ["editor.action.revealDeclaration"] },
+        { "before": ["g", "r", "n"], "commands": ["editor.action.rename"] },
+        { "before": ["g", "r", "a"], "commands": ["editor.action.quickFix"] },
+        { "before": ["g", "O"], "commands": ["workbench.action.gotoSymbol"] },
+        { "before": ["g", "W"], "commands": ["workbench.action.showAllSymbols"] },
+        { "before": ["K"], "commands": ["editor.action.showHover"] },
+
+        // Diagnostics
+        { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+        { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
+
+        // Git hunks
+        { "before": ["]", "c"], "commands": ["workbench.action.editor.nextChange"] },
+        { "before": ["[", "c"], "commands": ["workbench.action.editor.previousChange"] },
+
+        // Explorer
+        { "before": ["\\", "t"], "commands": ["workbench.files.action.showActiveFileInExplorer"] },
+        { "before": ["\\", "f"], "commands": ["workbench.view.explorer"] }
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["<leader>"], "commands": ["whichkey.show"] },
+        // Move lines (:m '>+1<CR>gv=gv)
+        { "before": ["J"], "after": [":", "m", " ", "'", ">", "+", "1", "<Enter>", "g", "v", "j", "o", "j", "o", "=", "g", "v"] },
+        { "before": ["K"], "after": [":", "m", " ", "'", "<", "-", "2", "<Enter>", "g", "v", "k", "o", "k", "o", "=", "g", "v"] },
+        { "before": ["g", "r", "a"], "commands": ["editor.action.quickFix"] }
+    ],
+
+    "vim.insertModeKeyBindingsNonRecursive": [
+        { "before": ["<C-c>"], "after": ["<Esc>"] }
+    ],
+
+    // Ctrl+hjkl from terminal
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.navigateLeft",
+        "workbench.action.navigateDown",
+        "workbench.action.navigateUp",
+        "workbench.action.navigateRight"
+    ],
+
+    // Leader menu (which-key)
+    "whichkey.delay": 300,
+    "whichkey.sortOrder": "alphabetically",
+    "whichkey.bindings": [
+        { "key": " ", "name": "[ ] Find existing buffers", "type": "command", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
+        { "key": "/", "name": "[/] Fuzzily search in current buffer", "type": "command", "command": "actions.find" },
+        { "key": "q", "name": "Open diagnostic list", "type": "command", "command": "workbench.actions.view.problems" },
+        {
+            "key": "a", "name": "+AI/Claude Code", "type": "bindings", "bindings": [
+                { "key": "c", "name": "Toggle Claude", "type": "command", "command": "workbench.action.toggleAuxiliaryBar" },
+                { "key": "f", "name": "Focus Claude", "type": "command", "command": "claude-vscode.focus" },
+                { "key": "r", "name": "Resume Claude", "type": "command", "command": "claude-vscode.reopenClosedSession" },
+                { "key": "C", "name": "Continue Claude", "type": "command", "command": "claude-vscode.editor.openLast" },
+                { "key": "b", "name": "Add current buffer", "type": "command", "command": "claude-vscode.insertAtMention" },
+                { "key": "s", "name": "Send to Claude", "type": "command", "command": "claude-vscode.insertAtMention" },
+                { "key": "a", "name": "Accept diff", "type": "command", "command": "claude-vscode.acceptProposedDiff" },
+                { "key": "d", "name": "Deny diff", "type": "command", "command": "claude-vscode.rejectProposedDiff" }
+            ]
+        },
+        {
+            "key": "b", "name": "+Buffer", "type": "bindings", "bindings": [
+                { "key": "d", "name": "Delete buffer", "type": "command", "command": "workbench.action.closeActiveEditor" },
+                { "key": "f", "name": "Format buffer", "type": "command", "command": "editor.action.formatDocument" }
+            ]
+        },
+        {
+            "key": "c", "name": "+Multicursor", "type": "bindings", "bindings": [
+                { "key": "j", "name": "Add cursor below", "type": "command", "command": "editor.action.insertCursorBelow" },
+                { "key": "k", "name": "Add cursor above", "type": "command", "command": "editor.action.insertCursorAbove" },
+                { "key": "n", "name": "Add cursor at next match", "type": "command", "command": "editor.action.addSelectionToNextFindMatch" },
+                { "key": "N", "name": "Add cursor at previous match", "type": "command", "command": "editor.action.addSelectionToPreviousFindMatch" },
+                { "key": "s", "name": "Skip next match", "type": "command", "command": "editor.action.moveSelectionToNextFindMatch" },
+                { "key": "S", "name": "Skip previous match", "type": "command", "command": "editor.action.moveSelectionToPreviousFindMatch" },
+                { "key": "x", "name": "Delete last cursor", "type": "command", "command": "cursorUndo" }
+            ]
+        },
+        { "key": "d", "name": "+Debugger", "type": "bindings", "bindings": [] },
+        {
+            "key": "f", "name": "+Find", "type": "bindings", "bindings": [
+                { "key": "f", "name": "Find files", "type": "command", "command": "workbench.action.quickOpen" },
+                { "key": "g", "name": "Find by grep", "type": "command", "command": "workbench.action.findInFiles" },
+                { "key": "w", "name": "Find current word", "type": "commands", "commands": ["editor.action.addSelectionToNextFindMatch", "workbench.action.findInFiles"] },
+                { "key": "h", "name": "Find help", "type": "command", "command": "workbench.action.openDocumentationUrl" },
+                { "key": "k", "name": "Find keymaps", "type": "command", "command": "workbench.action.openGlobalKeybindings" },
+                { "key": "s", "name": "Find select picker", "type": "command", "command": "workbench.action.quickOpen", "args": "?" },
+                { "key": "d", "name": "Find diagnostics", "type": "command", "command": "workbench.actions.view.problems" },
+                { "key": "r", "name": "Find resume", "type": "command", "command": "workbench.view.search" },
+                { "key": ".", "name": "Find recent files", "type": "command", "command": "workbench.action.openRecent" },
+                { "key": "c", "name": "Find commands", "type": "command", "command": "workbench.action.showCommands" },
+                { "key": "/", "name": "Find in open files", "type": "command", "command": "workbench.action.findInFiles", "args": { "onlyOpenEditors": true } },
+                { "key": "n", "name": "Find editor config", "type": "command", "command": "workbench.action.openSettingsJson" }
+            ]
+        },
+        {
+            "key": "g", "name": "+Git hunk", "type": "bindings", "bindings": [
+                { "key": "s", "name": "Stage hunk", "type": "command", "command": "git.stageSelectedRanges" },
+                { "key": "r", "name": "Reset hunk", "type": "command", "command": "git.revertSelectedRanges" },
+                { "key": "S", "name": "Stage buffer", "type": "command", "command": "git.stage" },
+                { "key": "R", "name": "Reset buffer", "type": "command", "command": "git.clean" },
+                { "key": "p", "name": "Preview hunk", "type": "command", "command": "editor.action.dirtydiff.next" },
+                { "key": "i", "name": "Preview hunk inline", "type": "command", "command": "editor.action.dirtydiff.next" },
+                { "key": "b", "name": "Blame line", "type": "command", "command": "git.blame.toggleEditorDecoration" },
+                { "key": "d", "name": "Diff against index", "type": "command", "command": "git.openChange" },
+                { "key": "D", "name": "Diff against last commit", "type": "command", "command": "git.openChange" },
+                { "key": "q", "name": "Hunks to quickfix (repo)", "type": "command", "command": "workbench.view.scm" },
+                { "key": "Q", "name": "Hunks to quickfix (all)", "type": "command", "command": "workbench.view.scm" },
+                {
+                    "key": "l", "name": "+Lazy", "type": "bindings", "bindings": [
+                        { "key": "g", "name": "LazyGit", "type": "commands", "commands": ["workbench.action.createTerminalEditor", "workbench.action.terminal.sendSequence"], "args": [null, { "text": "lazygit\n" }] }
+                    ]
+                }
+            ]
+        },
+        { "key": "h", "name": "+Harpoon", "type": "bindings", "bindings": [] },
+        {
+            "key": "t", "name": "+Toggle", "type": "bindings", "bindings": [
+                { "key": "b", "name": "Toggle line blame", "type": "command", "command": "git.blame.toggleEditorDecoration" }
+            ]
+        },
+        {
+            "key": "x", "name": "+Trouble", "type": "bindings", "bindings": [
+                { "key": "x", "name": "Diagnostics (Trouble)", "type": "commands", "commands": ["workbench.actions.view.toggleProblems", "workbench.action.focusActiveEditorGroup"] },
+                { "key": "s", "name": "Symbols", "type": "command", "command": "outline.focus" },
+                { "key": "Q", "name": "Quickfix list", "type": "command", "command": "workbench.actions.view.problems" }
+            ]
+        }
+    ],
+    "git.blame.editorDecoration.enabled": false,
+    "claudeCode.preferredLocation": "panel"
+}

@@ -23,3 +23,5 @@ _darcs
 ^/COPYING
 
 \.wezterm.lua # remove to use wezterm config
+
+^/vscode      # not stowed
